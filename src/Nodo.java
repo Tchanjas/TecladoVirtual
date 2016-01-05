@@ -1,14 +1,10 @@
-import java.util.HashMap;
-
 public class Nodo {
     String letra;
     int frequencia;
-    HashMap<String,Trie> filhos;
 
     public Nodo(String letra) {
         this.letra = letra;
         frequencia = 1;
-        filhos = new HashMap<String, Trie>();
     }
 
     public String getLetra() {
@@ -17,6 +13,10 @@ public class Nodo {
 
     void incrementaFrequencia(){
         frequencia++;
+    }
+
+    public int getFrequencia() {
+        return frequencia;
     }
 
     @Override

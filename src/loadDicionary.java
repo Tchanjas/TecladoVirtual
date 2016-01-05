@@ -1,11 +1,14 @@
+
 import java.io.*;
 
 public class loadDicionary {
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         File dicionario = new File("dictionary/test.txt");
 
-        if (!dicionario.exists()) return;
+        if (!dicionario.exists()) {
+            return;
+        }
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(dicionario)));
 
