@@ -27,228 +27,228 @@ public class Teclado extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        txt_input = new javax.swing.JTextField();
+        lbl_mostrador = new javax.swing.JLabel();
+        btn_tecla_q = new javax.swing.JButton();
+        btn_tecla_w = new javax.swing.JButton();
+        btn_tecla_e = new javax.swing.JButton();
+        btn_tecla_r = new javax.swing.JButton();
+        btn_tecla_t = new javax.swing.JButton();
+        btn_tecla_y = new javax.swing.JButton();
+        btn_tecla_u = new javax.swing.JButton();
+        btn_tecla_i = new javax.swing.JButton();
+        btn_tecla_o = new javax.swing.JButton();
+        btn_tecla_p = new javax.swing.JButton();
+        btn_tecla_g = new javax.swing.JButton();
+        btn_tecla_h = new javax.swing.JButton();
+        btn_tecla_j = new javax.swing.JButton();
+        btn_tecla_k = new javax.swing.JButton();
+        btn_tecla_l = new javax.swing.JButton();
+        btn_tecla_a = new javax.swing.JButton();
+        btn_tecla_s = new javax.swing.JButton();
+        btn_tecla_d = new javax.swing.JButton();
+        btn_tecla_f = new javax.swing.JButton();
+        btn_tecla_z = new javax.swing.JButton();
+        btn_tecla_x = new javax.swing.JButton();
+        btn_tecla_c = new javax.swing.JButton();
+        btn_tecla_v = new javax.swing.JButton();
+        btn_tecla_b = new javax.swing.JButton();
+        btn_tecla_n = new javax.swing.JButton();
+        btn_tecla_m = new javax.swing.JButton();
+        btn_tecla_espaco = new javax.swing.JButton();
+        lbl_smile = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setText("jTextField1");
+        txt_input.setText("jTextField1");
 
-        jLabel1.setText("jLabel1");
+        lbl_mostrador.setText("jLabel1");
 
-        jButton2.setText("q");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_q.setText("q");
+        btn_tecla_q.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_tecla_qActionPerformed(evt);
             }
         });
 
-        jButton3.setText("w");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_w.setText("w");
+        btn_tecla_w.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_tecla_wActionPerformed(evt);
             }
         });
 
-        jButton4.setText("e");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_e.setText("e");
+        btn_tecla_e.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btn_tecla_eActionPerformed(evt);
             }
         });
 
-        jButton5.setText("r");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_r.setText("r");
+        btn_tecla_r.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn_tecla_rActionPerformed(evt);
             }
         });
 
-        jButton6.setText("t");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_t.setText("t");
+        btn_tecla_t.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btn_tecla_tActionPerformed(evt);
             }
         });
 
-        jButton7.setText("y");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_y.setText("y");
+        btn_tecla_y.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btn_tecla_yActionPerformed(evt);
             }
         });
 
-        jButton8.setText("u");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_u.setText("u");
+        btn_tecla_u.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btn_tecla_uActionPerformed(evt);
             }
         });
 
-        jButton9.setText("i");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_i.setText("i");
+        btn_tecla_i.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btn_tecla_iActionPerformed(evt);
             }
         });
 
-        jButton10.setText("o");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_o.setText("o");
+        btn_tecla_o.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btn_tecla_oActionPerformed(evt);
             }
         });
 
-        jButton11.setText("p");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_p.setText("p");
+        btn_tecla_p.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                btn_tecla_pActionPerformed(evt);
             }
         });
 
-        jButton12.setText("g");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_g.setText("g");
+        btn_tecla_g.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                btn_tecla_gActionPerformed(evt);
             }
         });
 
-        jButton13.setText("h");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_h.setText("h");
+        btn_tecla_h.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                btn_tecla_hActionPerformed(evt);
             }
         });
 
-        jButton14.setText("j");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_j.setText("j");
+        btn_tecla_j.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                btn_tecla_jActionPerformed(evt);
             }
         });
 
-        jButton15.setText("k");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_k.setText("k");
+        btn_tecla_k.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                btn_tecla_kActionPerformed(evt);
             }
         });
 
-        jButton16.setText("l");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_l.setText("l");
+        btn_tecla_l.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                btn_tecla_lActionPerformed(evt);
             }
         });
 
-        jButton18.setText("a");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_a.setText("a");
+        btn_tecla_a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                btn_tecla_aActionPerformed(evt);
             }
         });
 
-        jButton19.setText("s");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_s.setText("s");
+        btn_tecla_s.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                btn_tecla_sActionPerformed(evt);
             }
         });
 
-        jButton20.setText("d");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_d.setText("d");
+        btn_tecla_d.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                btn_tecla_dActionPerformed(evt);
             }
         });
 
-        jButton21.setText("f");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_f.setText("f");
+        btn_tecla_f.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                btn_tecla_fActionPerformed(evt);
             }
         });
 
-        jButton22.setText("z");
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_z.setText("z");
+        btn_tecla_z.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
+                btn_tecla_zActionPerformed(evt);
             }
         });
 
-        jButton23.setText("x");
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_x.setText("x");
+        btn_tecla_x.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
+                btn_tecla_xActionPerformed(evt);
             }
         });
 
-        jButton24.setText("c");
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_c.setText("c");
+        btn_tecla_c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
+                btn_tecla_cActionPerformed(evt);
             }
         });
 
-        jButton25.setText("v");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_v.setText("v");
+        btn_tecla_v.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                btn_tecla_vActionPerformed(evt);
             }
         });
 
-        jButton17.setText("b");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_b.setText("b");
+        btn_tecla_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                btn_tecla_bActionPerformed(evt);
             }
         });
 
-        jButton26.setText("n");
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_n.setText("n");
+        btn_tecla_n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
+                btn_tecla_nActionPerformed(evt);
             }
         });
 
-        jButton27.setText("m");
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
+        btn_tecla_m.setText("m");
+        btn_tecla_m.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
+                btn_tecla_mActionPerformed(evt);
             }
         });
 
-        jButton30.setText("espaço");
+        btn_tecla_espaco.setText("espaço");
 
-        jLabel2.setText(":)");
+        lbl_smile.setText(":)");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -257,70 +257,70 @@ public class Teclado extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbl_mostrador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_input, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton22)
+                                .addComponent(btn_tecla_z)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton23)
+                                .addComponent(btn_tecla_x)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton24)
+                                .addComponent(btn_tecla_c)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton25)
+                                .addComponent(btn_tecla_v)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton17)
+                                .addComponent(btn_tecla_b)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton26)
+                                .addComponent(btn_tecla_n)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton27)
+                                .addComponent(btn_tecla_m)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btn_tecla_espaco, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton2)
+                                        .addComponent(btn_tecla_q)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton3)
+                                        .addComponent(btn_tecla_w)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton4)
+                                        .addComponent(btn_tecla_e)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton5)
+                                        .addComponent(btn_tecla_r)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton6)
+                                        .addComponent(btn_tecla_t)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton7)
+                                        .addComponent(btn_tecla_y)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton8)
+                                        .addComponent(btn_tecla_u)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton9)
+                                        .addComponent(btn_tecla_i)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton10))
+                                        .addComponent(btn_tecla_o))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton18)
+                                        .addComponent(btn_tecla_a)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton19)
+                                        .addComponent(btn_tecla_s)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton20)
+                                        .addComponent(btn_tecla_d)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton21)
+                                        .addComponent(btn_tecla_f)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton12)
+                                        .addComponent(btn_tecla_g)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton13)
+                                        .addComponent(btn_tecla_h)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton14)
+                                        .addComponent(btn_tecla_j)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton15)
+                                        .addComponent(btn_tecla_k)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton16)))
+                                        .addComponent(btn_tecla_l)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
-                                        .addComponent(jLabel2))
-                                    .addComponent(jButton11))))
+                                        .addComponent(lbl_smile))
+                                    .addComponent(btn_tecla_p))))
                         .addGap(0, 1, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -328,43 +328,43 @@ public class Teclado extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_input, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_mostrador, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10)
-                    .addComponent(jButton11))
+                    .addComponent(btn_tecla_q)
+                    .addComponent(btn_tecla_w)
+                    .addComponent(btn_tecla_e)
+                    .addComponent(btn_tecla_r)
+                    .addComponent(btn_tecla_t)
+                    .addComponent(btn_tecla_y)
+                    .addComponent(btn_tecla_u)
+                    .addComponent(btn_tecla_i)
+                    .addComponent(btn_tecla_o)
+                    .addComponent(btn_tecla_p))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton18)
-                    .addComponent(jButton19)
-                    .addComponent(jButton20)
-                    .addComponent(jButton21)
-                    .addComponent(jButton12)
-                    .addComponent(jButton13)
-                    .addComponent(jButton14)
-                    .addComponent(jButton15)
-                    .addComponent(jButton16)
-                    .addComponent(jLabel2))
+                    .addComponent(btn_tecla_a)
+                    .addComponent(btn_tecla_s)
+                    .addComponent(btn_tecla_d)
+                    .addComponent(btn_tecla_f)
+                    .addComponent(btn_tecla_g)
+                    .addComponent(btn_tecla_h)
+                    .addComponent(btn_tecla_j)
+                    .addComponent(btn_tecla_k)
+                    .addComponent(btn_tecla_l)
+                    .addComponent(lbl_smile))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton22)
-                    .addComponent(jButton23)
-                    .addComponent(jButton24)
-                    .addComponent(jButton25)
-                    .addComponent(jButton17)
-                    .addComponent(jButton26)
-                    .addComponent(jButton27)
-                    .addComponent(jButton30))
+                    .addComponent(btn_tecla_z)
+                    .addComponent(btn_tecla_x)
+                    .addComponent(btn_tecla_c)
+                    .addComponent(btn_tecla_v)
+                    .addComponent(btn_tecla_b)
+                    .addComponent(btn_tecla_n)
+                    .addComponent(btn_tecla_m)
+                    .addComponent(btn_tecla_espaco))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -382,109 +382,109 @@ public class Teclado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_tecla_qActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_qActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_tecla_qActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_tecla_wActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_wActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_tecla_wActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btn_tecla_eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_eActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btn_tecla_eActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btn_tecla_rActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_rActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btn_tecla_rActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btn_tecla_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_tActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btn_tecla_tActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btn_tecla_yActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_yActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btn_tecla_yActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btn_tecla_uActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_uActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btn_tecla_uActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void btn_tecla_iActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_iActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_btn_tecla_iActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void btn_tecla_oActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_oActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_btn_tecla_oActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void btn_tecla_pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_pActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_btn_tecla_pActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void btn_tecla_gActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_gActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_btn_tecla_gActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void btn_tecla_hActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_hActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_btn_tecla_hActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void btn_tecla_jActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_jActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
+    }//GEN-LAST:event_btn_tecla_jActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void btn_tecla_kActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_kActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+    }//GEN-LAST:event_btn_tecla_kActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void btn_tecla_lActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_lActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_btn_tecla_lActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void btn_tecla_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_aActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
+    }//GEN-LAST:event_btn_tecla_aActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void btn_tecla_sActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_sActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
+    }//GEN-LAST:event_btn_tecla_sActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void btn_tecla_dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_dActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    }//GEN-LAST:event_btn_tecla_dActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+    private void btn_tecla_fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_fActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
+    }//GEN-LAST:event_btn_tecla_fActionPerformed
 
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+    private void btn_tecla_zActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_zActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton22ActionPerformed
+    }//GEN-LAST:event_btn_tecla_zActionPerformed
 
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+    private void btn_tecla_xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_xActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton23ActionPerformed
+    }//GEN-LAST:event_btn_tecla_xActionPerformed
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+    private void btn_tecla_cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_cActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton24ActionPerformed
+    }//GEN-LAST:event_btn_tecla_cActionPerformed
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void btn_tecla_vActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_vActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton25ActionPerformed
+    }//GEN-LAST:event_btn_tecla_vActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void btn_tecla_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_bActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_btn_tecla_bActionPerformed
 
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+    private void btn_tecla_nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_nActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton26ActionPerformed
+    }//GEN-LAST:event_btn_tecla_nActionPerformed
 
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+    private void btn_tecla_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_mActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton27ActionPerformed
+    }//GEN-LAST:event_btn_tecla_mActionPerformed
 
     /**
      * @param args the command line arguments
@@ -522,36 +522,36 @@ public class Teclado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btn_tecla_a;
+    private javax.swing.JButton btn_tecla_b;
+    private javax.swing.JButton btn_tecla_c;
+    private javax.swing.JButton btn_tecla_d;
+    private javax.swing.JButton btn_tecla_e;
+    private javax.swing.JButton btn_tecla_espaco;
+    private javax.swing.JButton btn_tecla_f;
+    private javax.swing.JButton btn_tecla_g;
+    private javax.swing.JButton btn_tecla_h;
+    private javax.swing.JButton btn_tecla_i;
+    private javax.swing.JButton btn_tecla_j;
+    private javax.swing.JButton btn_tecla_k;
+    private javax.swing.JButton btn_tecla_l;
+    private javax.swing.JButton btn_tecla_m;
+    private javax.swing.JButton btn_tecla_n;
+    private javax.swing.JButton btn_tecla_o;
+    private javax.swing.JButton btn_tecla_p;
+    private javax.swing.JButton btn_tecla_q;
+    private javax.swing.JButton btn_tecla_r;
+    private javax.swing.JButton btn_tecla_s;
+    private javax.swing.JButton btn_tecla_t;
+    private javax.swing.JButton btn_tecla_u;
+    private javax.swing.JButton btn_tecla_v;
+    private javax.swing.JButton btn_tecla_w;
+    private javax.swing.JButton btn_tecla_x;
+    private javax.swing.JButton btn_tecla_y;
+    private javax.swing.JButton btn_tecla_z;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lbl_mostrador;
+    private javax.swing.JLabel lbl_smile;
+    private javax.swing.JTextField txt_input;
     // End of variables declaration//GEN-END:variables
 }
