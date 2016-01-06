@@ -1,7 +1,7 @@
 
 import java.io.*;
 
-public class loadDicionary {
+public class createDictionary {
 
     public static void main(String[] args) throws IOException {
         File dicionario = new File("dictionary/test.txt");
