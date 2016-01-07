@@ -28,9 +28,8 @@ public class createDictionary {
                 str = str.replaceAll("(?iu)ç", "c");
                 String[] aux = str.split("[^A-Za-z]+");
 
-                Trie nodoActual = dictionary;
-
                 for (int i = 0; i < aux.length; i++) {
+                    Trie nodoActual = dictionary;
                     aux[i] = aux[i].toLowerCase();
                     for (int j = 0; j < aux[i].length(); j++) {
                         nodoActual.add(new Nodo(aux[i].charAt(j) + ""));
