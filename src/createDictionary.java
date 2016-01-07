@@ -12,6 +12,8 @@ public class createDictionary {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(dicionario)));
 
+        Trie dictionary = new Trie(new Nodo(""));
+
         while (true) {
             String str = reader.readLine();
             if (str == null) {
@@ -25,11 +27,20 @@ public class createDictionary {
                 str = str.replaceAll("(?iu)ú|ù|ũ|û", "u");
                 str = str.replaceAll("(?iu)ç", "c");
                 String[] aux = str.split("[^A-Za-z]+");
+
+                Trie nodoActual = dictionary;
+
                 for (int i = 0; i < aux.length; i++) {
-                    System.out.print(aux[i]  + " ");
+                    aux[i] = aux[i].toLowerCase();
+                    for (int j = 0; j < aux[i].length(); j++) {
+                        nodoActual.add(new Nodo(aux[i].charAt(j) + ""));
+                        nodoActual = nodoActual.filhos.get(aux[i].charAt(j) + "");
+                    }
                 }
-                System.out.println("");
             }
         }
+
+        System.out.println(dictionary);
+        
     }
 }
