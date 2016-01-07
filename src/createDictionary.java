@@ -4,13 +4,13 @@ import java.io.*;
 public class createDictionary {
 
     public static void main(String[] args) throws IOException {
-        File dicionario = new File("dictionary/test.txt");
+        File file = new File("dictionary/test.txt");
 
-        if (!dicionario.exists()) {
+        if (!file.exists()) {
             return;
         }
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(dicionario)));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 
         Trie dictionary = new Trie(new Nodo(""));
 
@@ -32,8 +32,13 @@ public class createDictionary {
                     Trie nodoActual = dictionary;
                     aux[i] = aux[i].toLowerCase();
                     for (int j = 0; j < aux[i].length(); j++) {
-                        nodoActual.add(new Nodo(aux[i].charAt(j) + ""));
-                        nodoActual = nodoActual.filhos.get(aux[i].charAt(j) + "");
+                        if (j + 1 == aux[i].length()) {
+                            nodoActual.add(new Nodo(aux[i].charAt(j) + ""), true);
+                        } else {
+                            nodoActual.add(new Nodo(aux[i].charAt(j) + ""));
+                            nodoActual = nodoActual.filhos.get(aux[i].charAt(j) + "");
+                        }
+                        
                     }
                 }
             }
