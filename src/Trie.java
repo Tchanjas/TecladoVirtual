@@ -28,7 +28,7 @@ public class Trie {
 
     @Override
     public String toString() {
-        return "Trie{" + "root=" + root + ", filhos=" + filhos + '}';
+        return "{root=" + root + ", filhos=" + filhos + "}";
     }
     
     

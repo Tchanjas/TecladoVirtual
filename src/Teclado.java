@@ -56,6 +56,7 @@ public class Teclado extends javax.swing.JFrame {
         btn_tecla_n = new javax.swing.JButton();
         btn_tecla_m = new javax.swing.JButton();
         btn_tecla_espaco = new javax.swing.JButton();
+        btn_tecla_l1 = new javax.swing.JButton();
         lbl_smile = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -248,6 +249,13 @@ public class Teclado extends javax.swing.JFrame {
 
         btn_tecla_espaco.setText("espaço");
 
+        btn_tecla_l1.setText("apagar");
+        btn_tecla_l1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tecla_l1ActionPerformed(evt);
+            }
+        });
+
         lbl_smile.setText(":)");
 
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
@@ -257,26 +265,8 @@ public class Teclado extends javax.swing.JFrame {
             .addGroup(pnl_mainLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_mostrador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_input, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnl_mainLayout.createSequentialGroup()
-                                .addComponent(btn_tecla_z)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_tecla_x)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_tecla_c)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_tecla_v)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_tecla_b)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_tecla_n)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_tecla_m)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_tecla_espaco, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnl_mainLayout.createSequentialGroup()
                                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnl_mainLayout.createSequentialGroup()
@@ -317,11 +307,30 @@ public class Teclado extends javax.swing.JFrame {
                                         .addComponent(btn_tecla_l)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_tecla_l1)
                                     .addGroup(pnl_mainLayout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(lbl_smile))
-                                    .addComponent(btn_tecla_p))))
-                        .addGap(0, 1, Short.MAX_VALUE)))
+                                        .addComponent(btn_tecla_p)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lbl_smile))))
+                            .addGroup(pnl_mainLayout.createSequentialGroup()
+                                .addComponent(btn_tecla_z)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_tecla_x)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_tecla_c)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_tecla_v)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_tecla_b)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_tecla_n)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_tecla_m)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_tecla_espaco, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lbl_mostrador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_input, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         pnl_mainLayout.setVerticalGroup(
@@ -342,7 +351,8 @@ public class Teclado extends javax.swing.JFrame {
                     .addComponent(btn_tecla_u)
                     .addComponent(btn_tecla_i)
                     .addComponent(btn_tecla_o)
-                    .addComponent(btn_tecla_p))
+                    .addComponent(btn_tecla_p)
+                    .addComponent(lbl_smile))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_tecla_a)
@@ -351,10 +361,10 @@ public class Teclado extends javax.swing.JFrame {
                     .addComponent(btn_tecla_f)
                     .addComponent(btn_tecla_g)
                     .addComponent(btn_tecla_h)
-                    .addComponent(btn_tecla_j)
                     .addComponent(btn_tecla_k)
                     .addComponent(btn_tecla_l)
-                    .addComponent(lbl_smile))
+                    .addComponent(btn_tecla_l1)
+                    .addComponent(btn_tecla_j))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_tecla_z)
@@ -486,6 +496,10 @@ public class Teclado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_tecla_mActionPerformed
 
+    private void btn_tecla_l1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_l1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_tecla_l1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -535,6 +549,7 @@ public class Teclado extends javax.swing.JFrame {
     private javax.swing.JButton btn_tecla_j;
     private javax.swing.JButton btn_tecla_k;
     private javax.swing.JButton btn_tecla_l;
+    private javax.swing.JButton btn_tecla_l1;
     private javax.swing.JButton btn_tecla_m;
     private javax.swing.JButton btn_tecla_n;
     private javax.swing.JButton btn_tecla_o;

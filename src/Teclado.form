@@ -41,27 +41,8 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lbl_mostrador" alignment="1" max="32767" attributes="0"/>
-                      <Component id="txt_input" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btn_tecla_z" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btn_tecla_x" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btn_tecla_c" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btn_tecla_v" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btn_tecla_b" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btn_tecla_n" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btn_tecla_m" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="btn_tecla_espaco" min="-2" pref="120" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -105,16 +86,36 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                                      <Component id="btn_tecla_l1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="btn_tecla_p" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="lbl_smile" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="btn_tecla_p" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="btn_tecla_z" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn_tecla_x" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn_tecla_c" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn_tecla_v" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn_tecla_b" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn_tecla_n" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn_tecla_m" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn_tecla_espaco" min="-2" pref="159" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="lbl_mostrador" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txt_input" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -139,6 +140,7 @@
                       <Component id="btn_tecla_i" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_tecla_o" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_tecla_p" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_smile" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -148,10 +150,10 @@
                       <Component id="btn_tecla_f" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_tecla_g" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_tecla_h" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_tecla_j" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_tecla_k" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_tecla_l" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbl_smile" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_tecla_l1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_tecla_j" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -392,6 +394,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="espa&#xe7;o"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_tecla_l1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="apagar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_tecla_l1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_smile">
           <Properties>
