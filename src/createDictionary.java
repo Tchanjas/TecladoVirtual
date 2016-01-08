@@ -12,7 +12,7 @@ public class createDictionary {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 
-        Trie dictionary = new Trie(new Nodo(""));
+        Trie dictionary = new Trie(new NodoTrie(""));
 
         while (true) {
             String str = reader.readLine();
@@ -33,9 +33,9 @@ public class createDictionary {
                     aux[i] = aux[i].toLowerCase();
                     for (int j = 0; j < aux[i].length(); j++) {
                         if (j + 1 == aux[i].length()) {
-                            nodoActual.add(new Nodo(aux[i].charAt(j) + ""), true);
+                            nodoActual.add(new NodoTrie(aux[i].charAt(j) + ""), true);
                         } else {
-                            nodoActual.add(new Nodo(aux[i].charAt(j) + ""));
+                            nodoActual.add(new NodoTrie(aux[i].charAt(j) + ""));
                             nodoActual = nodoActual.filhos.get(aux[i].charAt(j) + "");
                         }
                         

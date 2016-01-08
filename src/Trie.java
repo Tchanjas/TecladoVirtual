@@ -2,10 +2,10 @@ import java.util.HashMap;
 
 public class Trie {
 
-    Nodo root;
+    NodoTrie root;
     HashMap<String,Trie> filhos;
 
-    public Trie(Nodo nodo) {
+    public Trie(NodoTrie nodo) {
         this.root = nodo;
         filhos = new HashMap<String,Trie>();
     }
@@ -19,7 +19,7 @@ public class Trie {
     }
 
     //adiciona um nodo à arvore
-    void add(Nodo nodo){
+    void add(NodoTrie nodo){
         if (filhos.containsKey(nodo.getLetra())) {
             filhos.get(nodo.getLetra()).incrementaFrequencia();
         } else {
@@ -28,7 +28,7 @@ public class Trie {
     }
     
     //adiciona um nodo à arvore e incrementa a frequencia porque é o último caractér da palavra
-    void add(Nodo nodo, boolean increments){
+    void add(NodoTrie nodo, boolean increments){
         if (filhos.containsKey(nodo.getLetra())) {
             if (increments) {
                 filhos.get(nodo.getLetra()).incrementaFrequencia();

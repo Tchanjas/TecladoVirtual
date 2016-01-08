@@ -1,10 +1,10 @@
 public class test {
     public static void main(String[] args) {
-        Trie arv = new Trie(new Nodo("a"));
-        arv.add(new Nodo("a"));
-        arv.add(new Nodo("b"));
-        arv.add(new Nodo("a"));
-        arv.filhos.get("a").add(new Nodo("c"));
+        Trie arv = new Trie(new NodoTrie("a"));
+        arv.add(new NodoTrie("a"));
+        arv.add(new NodoTrie("b"));
+        arv.add(new NodoTrie("a"));
+        arv.filhos.get("a").add(new NodoTrie("c"));
         
 //        System.out.println(arv);
 //        System.out.println(arv.getFrequencia());
