@@ -5,6 +5,7 @@ public class NodoTrie extends Nodo {
 
     public NodoTrie(String letra) {
         super(letra);
+        frequencia = 0;
     }
 
     void incrementaFrequencia() {
