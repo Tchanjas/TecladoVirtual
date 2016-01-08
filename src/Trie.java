@@ -17,6 +17,10 @@ public class Trie {
     public int getFrequencia() {
         return root.frequencia;
     }
+        
+    void add(NodoTrie nodo){
+        add(nodo,false);
+    }
     
     //adiciona um nodo à arvore e incrementa a frequencia porque é o último caractér da palavra
     void add(NodoTrie nodo, boolean increments){

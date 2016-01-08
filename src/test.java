@@ -1,5 +1,9 @@
+
+import java.io.IOException;
+
 public class test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
+        Dictionary.load("dictionary/test.txt");
         Trie arv = new Trie(new NodoTrie("a"));
         arv.add(new NodoTrie("a"));
         arv.add(new NodoTrie("b"));
