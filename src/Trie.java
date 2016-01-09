@@ -36,7 +36,11 @@ public class Trie {
         Trie trie = this;
 
         for (int i = 0; i < palavra.length(); i++) {
-            trie = trie.filhos.get(palavra.charAt(i) + "");
+            if (trie != null) {
+                trie = trie.filhos.get(palavra.charAt(i) + "");
+            } else {
+                break;
+            }
         }
 
         if (trie != null) {
