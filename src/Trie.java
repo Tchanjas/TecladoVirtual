@@ -6,24 +6,24 @@ import java.util.HashMap;
 public class Trie {
 
     int frequencia;
-    HashMap<String,Trie> filhos;
+    HashMap<String, Trie> filhos;
     ArrayList<ArrayList<String>> listaPalavras = new ArrayList<ArrayList<String>>(1);
 
     public Trie() {
         filhos = new HashMap<>();
         frequencia = 0;
     }
-    
-    void incrementaFrequencia(){
+
+    void incrementaFrequencia() {
         frequencia++;
     }
-        
-    void add(String letra){
-        add(letra,false);
+
+    void add(String letra) {
+        add(letra, false);
     }
-    
+
     //adiciona um nodo à arvore e incrementa a frequencia porque é o último caractér da palavra
-    void add(String letra, boolean increments){
+    void add(String letra, boolean increments) {
         if (!filhos.containsKey(letra)) {
             filhos.put(letra, new Trie());
         }
@@ -31,19 +31,23 @@ public class Trie {
             filhos.get(letra).incrementaFrequencia();
         }
     }
-    
+
     ArrayList find(String palavra) {
         Trie trie = this;
-        
+
         for (int i = 0; i < palavra.length(); i++) {
-            trie = filhos.get(palavra.charAt(i) + "");
+            trie = trie.filhos.get(palavra.charAt(i) + "");
         }
-        
-        find(trie, palavra);
-        listaSort();
-        return listaPalavras;
+
+        if (trie != null) {
+            find(trie, palavra);
+            listaSort();
+            return listaPalavras;
+        } else {
+            return new ArrayList<>();
+        }
     }
-    
+
     private void find(Trie trie, String palavra) {
         if (trie.frequencia > 0) {
             listaPalavras.add(new ArrayList<>());
@@ -57,7 +61,7 @@ public class Trie {
             }
         }
     }
-    
+
     void listaSort() {
         Collections.sort(listaPalavras, new Comparator<ArrayList<String>>() {
             @Override
@@ -66,7 +70,7 @@ public class Trie {
             }
         });
     }
- 
+
     public int getFrequencia() {
         return frequencia;
     }
@@ -78,6 +82,6 @@ public class Trie {
     @Override
     public String toString() {
         return "Trie{" + "frequencia=" + frequencia + ", filhos=" + filhos + '}';
-    }  
+    }
 
 }
