@@ -1,4 +1,3 @@
-
 import java.io.*;
 
 public class Dictionary {
@@ -10,7 +9,7 @@ public class Dictionary {
         }
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-        Trie dictionary = new Trie(new NodoTrie(""));
+        Trie dictionary = new Trie();
 
         while (true) {
             String str = reader.readLine();
@@ -31,9 +30,9 @@ public class Dictionary {
                     aux[i] = aux[i].toLowerCase();
                     for (int j = 0; j < aux[i].length(); j++) {
                         if (j + 1 == aux[i].length()) {
-                            nodoActual.add(new NodoTrie(aux[i].charAt(j) + ""), true);
+                            nodoActual.add(aux[i].charAt(j) + "", true);
                         } else {
-                            nodoActual.add(new NodoTrie(aux[i].charAt(j) + ""), false);
+                            nodoActual.add(aux[i].charAt(j) + "", false);
                             nodoActual = nodoActual.filhos.get(aux[i].charAt(j) + "");
                         }
 

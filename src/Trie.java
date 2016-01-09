@@ -2,40 +2,43 @@ import java.util.HashMap;
 
 public class Trie {
 
-    NodoTrie root;
+    int frequencia;
     HashMap<String,Trie> filhos;
 
-    public Trie(NodoTrie nodo) {
-        this.root = nodo;
-        filhos = new HashMap<String,Trie>();
+    public Trie() {
+        filhos = new HashMap<>();
+        frequencia = 0;
     }
     
     void incrementaFrequencia(){
-        root.frequencia++;
-    }
-    
-    public int getFrequencia() {
-        return root.frequencia;
+        frequencia++;
     }
         
-    void add(NodoTrie nodo){
-        add(nodo,false);
+    void add(String letra){
+        add(letra,false);
     }
     
     //adiciona um nodo à arvore e incrementa a frequencia porque é o último caractér da palavra
-    void add(NodoTrie nodo, boolean increments){
-        if (!filhos.containsKey(nodo.getLetra())) {
-            filhos.put(nodo.getLetra(), new Trie(nodo));
+    void add(String letra, boolean increments){
+        if (!filhos.containsKey(letra)) {
+            filhos.put(letra, new Trie());
         }
         if (increments) {
-            filhos.get(nodo.getLetra()).incrementaFrequencia();
+            filhos.get(letra).incrementaFrequencia();
         }
+    }
+ 
+    public int getFrequencia() {
+        return frequencia;
+    }
+
+    public HashMap<String, Trie> getFilhos() {
+        return filhos;
     }
 
     @Override
     public String toString() {
-        return "{root=" + root + ", filhos=" + filhos + "}";
-    }
-    
-    
+        return "Trie{" + "frequencia=" + frequencia + ", filhos=" + filhos + '}';
+    }  
+
 }
