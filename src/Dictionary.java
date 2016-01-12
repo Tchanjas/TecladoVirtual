@@ -1,3 +1,4 @@
+
 import java.io.*;
 
 public class Dictionary {
@@ -38,9 +39,38 @@ public class Dictionary {
 
                     }
                 }
+                saveTrie(dictionary);
             }
         }
 
+    }
+
+    public static void saveTrie(Trie structure) {
+        try {
+            FileOutputStream fileoutput = new FileOutputStream("dictionary/dictionaryStructure.dat");
+            ObjectOutputStream objectoutput = new ObjectOutputStream(fileoutput);
+            objectoutput.writeObject(structure);
+            objectoutput.close();
+        } catch (Exception e) {
+            System.out.println("Erro na gravação da estrutura");
+        }
+    }
+
+    public static Trie loadTrie(String path) {
+        File estrutura = new File(path);
+        Trie estruturaTrie = new Trie();
+        if (!estrutura.exists()) {
+            return null;
+        } else {
+            try {
+                FileInputStream fileInput = new FileInputStream(estrutura);
+                ObjectInputStream objectInput = new ObjectInputStream(fileInput);
+                estruturaTrie = (Trie) objectInput.readObject();
+            } catch (Exception e) {
+                System.out.println("Erro no carregamento da estrutura");
+            }
+            return estruturaTrie;
+        }
     }
 
 }

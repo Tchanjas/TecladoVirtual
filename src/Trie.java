@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
-public class Trie {
+public class Trie implements Serializable{
 
     int frequencia;
     HashMap<String, Trie> filhos;

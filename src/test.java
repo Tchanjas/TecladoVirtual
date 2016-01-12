@@ -4,8 +4,8 @@ import java.io.IOException;
 public class test {
     public static void main(String[] args) throws IOException{
         Dictionary.load("dictionary/test.txt");
-        Trie arv = new Trie();
-        arv.add("a", true);
+        Trie arv = Dictionary.loadTrie("dictionary/dictionaryStructure.dat");
+        /*arv.add("a", true);
         arv.add("b");
         arv.add("a",true);
         arv.filhos.get("a").add("c", true);
@@ -24,9 +24,9 @@ public class test {
         nodoAtual = nodoAtual.filhos.get("a");
         System.out.println(nodoAtual);
         nodoAtual = nodoAtual.filhos.get("c");
-        System.out.println(nodoAtual);
+        System.out.println(nodoAtual);*/
         
-        System.out.println(arv.find("a"));
+        System.out.println(arv.find("o"));
 
     }
 }
