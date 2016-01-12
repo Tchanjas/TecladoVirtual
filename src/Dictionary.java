@@ -27,22 +27,21 @@ public class Dictionary {
                 String[] aux = str.split("[^A-Za-z]+");
 
                 for (int i = 0; i < aux.length; i++) {
-                    Trie nodoActual = dictionary;
+                    Trie trieActual = dictionary;
                     aux[i] = aux[i].toLowerCase();
                     for (int j = 0; j < aux[i].length(); j++) {
                         if (j + 1 == aux[i].length()) {
-                            nodoActual.add(aux[i].charAt(j) + "", true);
+                            trieActual.add(aux[i].charAt(j) + "", true);
                         } else {
-                            nodoActual.add(aux[i].charAt(j) + "", false);
-                            nodoActual = nodoActual.filhos.get(aux[i].charAt(j) + "");
+                            trieActual.add(aux[i].charAt(j) + "", false);
+                            trieActual = trieActual.filhos.get(aux[i].charAt(j) + "");
                         }
 
                     }
                 }
-                saveTrie(dictionary);
             }
         }
-
+        saveTrie(dictionary);
     }
 
     public static void saveTrie(Trie structure) {
