@@ -1,10 +1,9 @@
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
-public class Trie implements Serializable{
+public class Trie {
 
     int frequencia;
     HashMap<String, Trie> filhos;
@@ -35,7 +34,6 @@ public class Trie implements Serializable{
 
     ArrayList find(String palavra) {
         Trie trie = this;
-        listaPalavras.clear();
 
         for (int i = 0; i < palavra.length(); i++) {
             if (trie != null) {
