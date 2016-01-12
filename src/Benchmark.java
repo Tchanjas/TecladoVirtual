@@ -1,32 +1,38 @@
 
 import java.io.IOException;
 
-public class test {
+public class Benchmark {
     public static void main(String[] args) throws IOException{
-        Dictionary.load("dictionary/test.txt");
+        
+        System.out.println("\nDicionario Trie Load():");
+        long StartTime = System.currentTimeMillis();
+        Dictionary.load("dictionary/books/oslusiadas.txt");
+        long StopTime = System.currentTimeMillis();
         Trie arv = Dictionary.loadTrie("dictionary/dictionaryStructure.dat");
-        /*arv.add("a", true);
-        arv.add("b");
-        arv.add("a",true);
-        arv.filhos.get("a").add("c", true);
-        arv.filhos.get("a").filhos.get("c").add("c", true);
-        arv.filhos.get("a").add("d", true);
-        arv.filhos.get("a").add("e", true);
-        arv.filhos.get("a").add("e", true);
-        arv.filhos.get("a").add("e", true);
+        System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
         
-        System.out.println(arv);
-        System.out.println(arv.getFrequencia());
-        System.out.println(arv.filhos.get("a").getFrequencia());
         
-        Trie nodoAtual = arv;
-        System.out.println(nodoAtual);
-        nodoAtual = nodoAtual.filhos.get("a");
-        System.out.println(nodoAtual);
-        nodoAtual = nodoAtual.filhos.get("c");
-        System.out.println(nodoAtual);*/
+        System.out.println("Dicionario TrieArray Load():");
+        StartTime = System.currentTimeMillis();
+        DictionaryArray.load("dictionary/test.txt");
+        StopTime = System.currentTimeMillis();
+        System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
+        Trie arvArr = Dictionary.loadTrie("dictionary/dictionaryArrayStructure.dat");
         
+        
+        System.out.println("---------------------");
+        
+        
+        System.out.println("Trie find():");
+        StartTime = System.nanoTime();
         System.out.println(arv.find("o"));
-
+        StopTime = System.nanoTime();
+        System.out.println("Tempo: " + (StopTime - StartTime) + " ns");
+        
+        System.out.println("TrieArray find():");
+        StartTime = System.nanoTime();
+        System.out.println(arvArr.find("o"));
+        StopTime = System.nanoTime();
+        System.out.println("Tempo: " + (StopTime - StartTime) + " ns");
     }
 }

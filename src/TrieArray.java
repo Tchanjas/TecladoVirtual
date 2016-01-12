@@ -1,17 +1,20 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 
-public class Trie {
+public class TrieArray implements Serializable{
 
     int frequencia;
-    HashMap<String, Trie> filhos;
-    ArrayList<ArrayList<String>> listaPalavras = new ArrayList<ArrayList<String>>(1);
+    String root;
+    TrieArray[] filhos;
+    ArrayList<ArrayList<String>> listaPalavras;
 
-    public Trie() {
-        filhos = new HashMap<>();
+    public TrieArray(String root) {
+        filhos = new TrieArray[26];
         frequencia = 0;
+        this.root = root;
+        listaPalavras =  new ArrayList<>(1);
     }
 
     void incrementaFrequencia() {
@@ -24,20 +27,22 @@ public class Trie {
 
     //adiciona um nodo à arvore e incrementa a frequencia porque é o último caractér da palavra
     void add(String letra, boolean increments) {
-        if (!filhos.containsKey(letra)) {
-            filhos.put(letra, new Trie());
+        int index = letra.charAt(0) - 'a';
+        if (filhos[index] == null) {
+            filhos[index] = new TrieArray(letra.charAt(0) + "");
         }
         if (increments) {
-            filhos.get(letra).incrementaFrequencia();
+            filhos[index].frequencia += 1;
         }
     }
 
     ArrayList find(String palavra) {
-        Trie trie = this;
+        TrieArray trie = this;
+        listaPalavras.clear();
 
         for (int i = 0; i < palavra.length(); i++) {
             if (trie != null) {
-                trie = trie.filhos.get(palavra.charAt(i) + "");
+                trie = trie.filhos[palavra.charAt(i) - 'a'];
             } else {
                 break;
             }
@@ -52,16 +57,16 @@ public class Trie {
         }
     }
 
-    private void find(Trie trie, String palavra) {
+    private void find(TrieArray trie, String palavra) {
         if (trie.frequencia > 0) {
             listaPalavras.add(new ArrayList<>());
             listaPalavras.get(listaPalavras.size() - 1).add(trie.frequencia + "");
             listaPalavras.get(listaPalavras.size() - 1).add(palavra);
         }
-
-        if (!trie.filhos.isEmpty()) {
-            for (String key : trie.filhos.keySet()) {
-                find(trie.filhos.get(key), palavra + key);
+        
+        for (int i = 0; i < filhos.length; i++) {
+            if (trie.filhos[palavra.charAt(i) - 'a'] != null) {
+                find(trie.filhos[palavra.charAt(i) - 'a'], palavra + trie.filhos[palavra.charAt(i) - 'a'].root);
             }
         }
     }
@@ -79,7 +84,7 @@ public class Trie {
         return frequencia;
     }
 
-    public HashMap<String, Trie> getFilhos() {
+    public TrieArray[] getFilhos() {
         return filhos;
     }
 

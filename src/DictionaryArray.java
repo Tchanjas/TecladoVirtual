@@ -1,7 +1,7 @@
 
 import java.io.*;
 
-public class Dictionary {
+public class DictionaryArray {
 
     public static void load(String path) throws IOException {
         File file = new File(path);
@@ -10,7 +10,7 @@ public class Dictionary {
         }
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-        Trie dictionary = new Trie();
+        TrieArray dictionary = new TrieArray("");
 
         while (true) {
             String str = reader.readLine();
@@ -27,14 +27,14 @@ public class Dictionary {
                 String[] aux = str.split("[^A-Za-z]+");
 
                 for (int i = 0; i < aux.length; i++) {
-                    Trie nodoActual = dictionary;
+                    TrieArray trieActual = dictionary;
                     aux[i] = aux[i].toLowerCase();
                     for (int j = 0; j < aux[i].length(); j++) {
                         if (j + 1 == aux[i].length()) {
-                            nodoActual.add(aux[i].charAt(j) + "", true);
+                            trieActual.add(aux[i].charAt(j) + "", true);
                         } else {
-                            nodoActual.add(aux[i].charAt(j) + "", false);
-                            nodoActual = nodoActual.filhos.get(aux[i].charAt(j) + "");
+                            trieActual.add(aux[i].charAt(j) + "", false);
+                            trieActual = trieActual.filhos[aux[i].charAt(j) - 'a'];
                         }
 
                     }
@@ -45,9 +45,9 @@ public class Dictionary {
 
     }
 
-    public static void saveTrie(Trie structure) {
+    public static void saveTrie(TrieArray structure) {
         try {
-            FileOutputStream fileoutput = new FileOutputStream("dictionary/dictionaryStructure.dat");
+            FileOutputStream fileoutput = new FileOutputStream("dictionary/dictionaryArrayStructure.dat");
             ObjectOutputStream objectoutput = new ObjectOutputStream(fileoutput);
             objectoutput.writeObject(structure);
             objectoutput.close();
