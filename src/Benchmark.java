@@ -6,7 +6,7 @@ public class Benchmark {
         
         System.out.println("\nDicionario Trie Load():");
         long StartTime = System.currentTimeMillis();
-        Dictionary.load("dictionary/books/oslusiadas.txt");
+        Dictionary.load();
         long StopTime = System.currentTimeMillis();
         Trie arv = Dictionary.loadTrie("dictionary/dictionaryStructure.dat");
         System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
@@ -14,7 +14,7 @@ public class Benchmark {
         
         System.out.println("Dicionario TrieArray Load():");
         StartTime = System.currentTimeMillis();
-        DictionaryArray.load("dictionary/test.txt");
+        DictionaryArray.load();
         StopTime = System.currentTimeMillis();
         System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
         Trie arvArr = Dictionary.loadTrie("dictionary/dictionaryArrayStructure.dat");

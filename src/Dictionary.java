@@ -1,52 +1,60 @@
-
 import java.io.*;
 
 public class Dictionary {
 
-    public static void load(String path) throws IOException {
-        File file = new File(path);
+    public static void load() throws IOException {
+        
+        String pathDictionary = "dictionary/books/oslusiadas.txt";
+        String pathStructure = "dictionary/dictionaryArrayStructure.dat";
+
+        File file = new File(pathDictionary);
         if (!file.exists()) {
             return;
         }
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         Trie dictionary = new Trie();
+        File estruturaTrie = new File(pathStructure);
 
-        while (true) {
-            String str = reader.readLine();
-            if (str == null) {
-                break;
-            } else {
-                // (?iu) é a case insensitive flag
-                str = str.replaceAll("(?iu)á|à|ã|â", "a");
-                str = str.replaceAll("(?iu)é|è|ẽ|ê", "e");
-                str = str.replaceAll("(?iu)í|ì|ĩ|î", "i");
-                str = str.replaceAll("(?iu)ó|ò|õ|ô", "o");
-                str = str.replaceAll("(?iu)ú|ù|ũ|û", "u");
-                str = str.replaceAll("(?iu)ç", "c");
-                String[] aux = str.split("[^A-Za-z]+");
+        if (estruturaTrie.exists()) {
+            dictionary = loadTrie(pathStructure);
+        } else {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+            while (true) {
+                String str = reader.readLine();
+                if (str == null) {
+                    break;
+                } else {
+                    // (?iu) é a case insensitive flag
+                    str = str.replaceAll("(?iu)á|à|ã|â", "a");
+                    str = str.replaceAll("(?iu)é|è|ẽ|ê", "e");
+                    str = str.replaceAll("(?iu)í|ì|ĩ|î", "i");
+                    str = str.replaceAll("(?iu)ó|ò|õ|ô", "o");
+                    str = str.replaceAll("(?iu)ú|ù|ũ|û", "u");
+                    str = str.replaceAll("(?iu)ç", "c");
+                    String[] aux = str.split("[^A-Za-z]+");
 
-                for (int i = 0; i < aux.length; i++) {
-                    Trie trieActual = dictionary;
-                    aux[i] = aux[i].toLowerCase();
-                    for (int j = 0; j < aux[i].length(); j++) {
-                        if (j + 1 == aux[i].length()) {
-                            trieActual.add(aux[i].charAt(j) + "", true);
-                        } else {
-                            trieActual.add(aux[i].charAt(j) + "", false);
-                            trieActual = trieActual.filhos.get(aux[i].charAt(j) + "");
+                    for (int i = 0; i < aux.length; i++) {
+                        Trie trieActual = dictionary;
+                        aux[i] = aux[i].toLowerCase();
+                        for (int j = 0; j < aux[i].length(); j++) {
+                            if (j + 1 == aux[i].length()) {
+                                trieActual.add(aux[i].charAt(j) + "", true);
+                            } else {
+                                trieActual.add(aux[i].charAt(j) + "", false);
+                                trieActual = trieActual.filhos.get(aux[i].charAt(j) + "");
+                            }
+
                         }
-
                     }
                 }
             }
+            saveTrie(dictionary, pathStructure);
         }
-        saveTrie(dictionary);
     }
 
-    public static void saveTrie(Trie structure) {
+    public static void saveTrie(Trie structure, String path) {
         try {
-            FileOutputStream fileoutput = new FileOutputStream("dictionary/dictionaryStructure.dat");
+            FileOutputStream fileoutput = new FileOutputStream(path);
             ObjectOutputStream objectoutput = new ObjectOutputStream(fileoutput);
             objectoutput.writeObject(structure);
             objectoutput.close();
