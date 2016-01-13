@@ -4,7 +4,7 @@ public class DictionaryArray {
 
     public static void load() throws IOException {
 
-        String pathDictionary = "dictionary/test.txt";
+        String pathDictionary = "dictionary/books/oslusiadas.txt";
         String pathStructure = "dictionary/dictionaryArrayStructure.dat";
 
         File file = new File(pathDictionary);
