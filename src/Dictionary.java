@@ -1,6 +1,9 @@
 import java.io.*;
+import java.util.ArrayList;
 
 public class Dictionary {
+    
+    private static Trie dictionary = new Trie();
 
     public static void load() throws IOException {
         
@@ -12,7 +15,6 @@ public class Dictionary {
             return;
         }
 
-        Trie dictionary = new Trie();
         File estruturaTrie = new File(pathStructure);
 
         if (estruturaTrie.exists()) {
@@ -79,5 +81,8 @@ public class Dictionary {
             return estruturaTrie;
         }
     }
-
+    
+    public static ArrayList find(String palavra) {
+        return dictionary.find(palavra);
+    }
 }

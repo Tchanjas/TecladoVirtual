@@ -15,21 +15,21 @@ public class Benchmark {
         DictionaryArray.load();
         StopTime = System.currentTimeMillis();
         System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
-//        
-//        
-//        System.out.println("---------------------");
-//        
-//        
-//        System.out.println("Trie find():");
-//        StartTime = System.nanoTime();
-//        System.out.println(arv.find("o"));
-//        StopTime = System.nanoTime();
-//        System.out.println("Tempo: " + (StopTime - StartTime) + " ns");
-//        
-//        System.out.println("TrieArray find():");
-//        StartTime = System.nanoTime();
-//        System.out.println(arvArr.find("o"));
-//        StopTime = System.nanoTime();
-//        System.out.println("Tempo: " + (StopTime - StartTime) + " ns");
+        
+        
+        System.out.println("---------------------");
+        
+        
+        System.out.println("Trie find():");
+        StartTime = System.currentTimeMillis();
+        System.out.println(Dictionary.find("o"));
+        StopTime = System.currentTimeMillis();
+        System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
+        
+        System.out.println("TrieArray find():");
+        StartTime = System.currentTimeMillis();
+        System.out.println(DictionaryArray.find("o"));
+        StopTime = System.currentTimeMillis();
+        System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
     }
 }
