@@ -27,7 +27,7 @@ public class Teclado extends javax.swing.JFrame {
     private void initComponents() {
 
         pnl_main = new javax.swing.JPanel();
-        txt_input = new javax.swing.JTextField();
+        txt_display = new javax.swing.JTextField();
         lbl_mostrador = new javax.swing.JLabel();
         btn_tecla_q = new javax.swing.JButton();
         btn_tecla_w = new javax.swing.JButton();
@@ -60,8 +60,6 @@ public class Teclado extends javax.swing.JFrame {
         lbl_smile = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        txt_input.setText("jTextField1");
 
         lbl_mostrador.setText("jLabel1");
 
@@ -248,6 +246,11 @@ public class Teclado extends javax.swing.JFrame {
         });
 
         btn_tecla_espaco.setText("espaço");
+        btn_tecla_espaco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tecla_espacoActionPerformed(evt);
+            }
+        });
 
         btn_tecla_l1.setText("apagar");
         btn_tecla_l1.addActionListener(new java.awt.event.ActionListener() {
@@ -330,14 +333,14 @@ public class Teclado extends javax.swing.JFrame {
                                 .addComponent(btn_tecla_espaco, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(lbl_mostrador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_input, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(txt_display, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         pnl_mainLayout.setVerticalGroup(
             pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_mainLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txt_input, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_display, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_mostrador, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -394,111 +397,147 @@ public class Teclado extends javax.swing.JFrame {
 
     private void btn_tecla_qActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_qActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "q");
     }//GEN-LAST:event_btn_tecla_qActionPerformed
 
     private void btn_tecla_wActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_wActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "w");
     }//GEN-LAST:event_btn_tecla_wActionPerformed
 
     private void btn_tecla_eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_eActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "e");
     }//GEN-LAST:event_btn_tecla_eActionPerformed
 
     private void btn_tecla_rActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_rActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "r");
     }//GEN-LAST:event_btn_tecla_rActionPerformed
 
     private void btn_tecla_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_tActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "t");
     }//GEN-LAST:event_btn_tecla_tActionPerformed
 
     private void btn_tecla_yActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_yActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "y");
     }//GEN-LAST:event_btn_tecla_yActionPerformed
 
     private void btn_tecla_uActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_uActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "u");
     }//GEN-LAST:event_btn_tecla_uActionPerformed
 
     private void btn_tecla_iActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_iActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "i");
     }//GEN-LAST:event_btn_tecla_iActionPerformed
 
     private void btn_tecla_oActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_oActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "o");
     }//GEN-LAST:event_btn_tecla_oActionPerformed
 
     private void btn_tecla_pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_pActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "p");
     }//GEN-LAST:event_btn_tecla_pActionPerformed
 
     private void btn_tecla_gActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_gActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "g");
     }//GEN-LAST:event_btn_tecla_gActionPerformed
 
     private void btn_tecla_hActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_hActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "h");
     }//GEN-LAST:event_btn_tecla_hActionPerformed
 
     private void btn_tecla_jActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_jActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "j");
     }//GEN-LAST:event_btn_tecla_jActionPerformed
 
     private void btn_tecla_kActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_kActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "k");
     }//GEN-LAST:event_btn_tecla_kActionPerformed
 
     private void btn_tecla_lActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_lActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "l");
     }//GEN-LAST:event_btn_tecla_lActionPerformed
 
     private void btn_tecla_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_aActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "a");
     }//GEN-LAST:event_btn_tecla_aActionPerformed
 
     private void btn_tecla_sActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_sActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "s");
     }//GEN-LAST:event_btn_tecla_sActionPerformed
 
     private void btn_tecla_dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_dActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "d");
     }//GEN-LAST:event_btn_tecla_dActionPerformed
 
     private void btn_tecla_fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_fActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "f");
     }//GEN-LAST:event_btn_tecla_fActionPerformed
 
     private void btn_tecla_zActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_zActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "z");
     }//GEN-LAST:event_btn_tecla_zActionPerformed
 
     private void btn_tecla_xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_xActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "x");
     }//GEN-LAST:event_btn_tecla_xActionPerformed
 
     private void btn_tecla_cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_cActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "c");
     }//GEN-LAST:event_btn_tecla_cActionPerformed
 
     private void btn_tecla_vActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_vActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "v");
     }//GEN-LAST:event_btn_tecla_vActionPerformed
 
     private void btn_tecla_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_bActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "b");
     }//GEN-LAST:event_btn_tecla_bActionPerformed
 
     private void btn_tecla_nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_nActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "n");
     }//GEN-LAST:event_btn_tecla_nActionPerformed
 
     private void btn_tecla_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_mActionPerformed
         // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + "m");
     }//GEN-LAST:event_btn_tecla_mActionPerformed
 
     private void btn_tecla_l1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_l1ActionPerformed
         // TODO add your handling code here:
+        if (!txt_display.getText().equals("")) {
+            txt_display.setText(txt_display.getText().substring(0, txt_display.getText().length() - 1));
+        } else {
+            txt_display.setText("");
+        } 
     }//GEN-LAST:event_btn_tecla_l1ActionPerformed
+
+    private void btn_tecla_espacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_espacoActionPerformed
+        // TODO add your handling code here:
+        txt_display.setText(txt_display.getText() + " ");
+    }//GEN-LAST:event_btn_tecla_espacoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -567,6 +606,6 @@ public class Teclado extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_mostrador;
     private javax.swing.JLabel lbl_smile;
     private javax.swing.JPanel pnl_main;
-    private javax.swing.JTextField txt_input;
+    private javax.swing.JTextField txt_display;
     // End of variables declaration//GEN-END:variables
 }
