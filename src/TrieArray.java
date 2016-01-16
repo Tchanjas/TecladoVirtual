@@ -64,9 +64,9 @@ public class TrieArray implements Serializable{
             listaPalavras.get(listaPalavras.size() - 1).add(palavra);
         }
         
-        for (int i = 0; i < palavra.length(); i++) {
-            if (trie.filhos[palavra.charAt(i) - 'a'] != null) {
-                find(trie.filhos[palavra.charAt(i) - 'a'], palavra + trie.filhos[palavra.charAt(i) - 'a'].root);
+        for (int i = 0; i < trie.filhos.length; i++) {
+            if (trie.filhos[i] != null) {
+                find(trie.filhos[i], palavra + trie.filhos[i].root);
             }
         }
     }
