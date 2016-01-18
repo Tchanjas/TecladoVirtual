@@ -255,8 +255,6 @@ public class Teclado extends javax.swing.JFrame {
             }
         });
 
-        lbl_smile.setText(":)");
-
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
         pnl_main.setLayout(pnl_mainLayout);
         pnl_mainLayout.setHorizontalGroup(
@@ -309,7 +307,7 @@ public class Teclado extends javax.swing.JFrame {
                                     .addComponent(btn_tecla_l1)
                                     .addGroup(pnl_mainLayout.createSequentialGroup()
                                         .addComponent(btn_tecla_p)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(lbl_smile))))
                             .addGroup(pnl_mainLayout.createSequentialGroup()
                                 .addComponent(btn_tecla_z)
@@ -391,169 +389,177 @@ public class Teclado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    public void searchText(String str) {
-                ArrayList words = Dicionario.Dictionary.find(lbl_mostrador.getText()+str);
-                ArrayList aux;
-                for (int i = 0; i < 10; i++) {
-                    aux = (ArrayList) words.get(i);
-                    lbl_mostrador.setText(lbl_mostrador.getText()+aux.get(1)+" ");
-                }
+    public void searchText() {
+        ArrayList words = Dicionario.Dictionary.find(txt_display.getText());
+        ArrayList aux;
+        lbl_mostrador.setText("");
+        if (words.size() > 0) {
+            lbl_smile.setText(":)");
+            int size = words.size() < 10 ? words.size() : 10;
+            for (int i = 0; i < size; i++) {
+                aux = (ArrayList) words.get(i);
+                lbl_mostrador.setText(lbl_mostrador.getText() + aux.get(1) + " ");
             }
+        } else {
+            lbl_smile.setText(":(");
+            lbl_mostrador.setText("");
+        }
+    }
 
     private void btn_tecla_qActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_qActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "q");
-        searchText("q");
+        searchText();
     }//GEN-LAST:event_btn_tecla_qActionPerformed
 
     private void btn_tecla_wActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_wActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "w");
-        searchText("w");
+        searchText();
     }//GEN-LAST:event_btn_tecla_wActionPerformed
 
     private void btn_tecla_eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_eActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "e");
-        searchText("e");
+        searchText();
     }//GEN-LAST:event_btn_tecla_eActionPerformed
 
     private void btn_tecla_rActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_rActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "r");
-        searchText("r");
+        searchText();
     }//GEN-LAST:event_btn_tecla_rActionPerformed
 
     private void btn_tecla_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_tActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "t");
-        searchText("t");
+        searchText();
     }//GEN-LAST:event_btn_tecla_tActionPerformed
 
     private void btn_tecla_yActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_yActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "y");
-        searchText("y");
+        searchText();
     }//GEN-LAST:event_btn_tecla_yActionPerformed
 
     private void btn_tecla_uActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_uActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "u");
-        searchText("u");
+        searchText();
     }//GEN-LAST:event_btn_tecla_uActionPerformed
 
     private void btn_tecla_iActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_iActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "i");
-        searchText("i");
+        searchText();
     }//GEN-LAST:event_btn_tecla_iActionPerformed
 
     private void btn_tecla_oActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_oActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "o");
-        searchText("o");
+        searchText();
     }//GEN-LAST:event_btn_tecla_oActionPerformed
 
     private void btn_tecla_pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_pActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "p");
-        searchText("p");
+        searchText();
     }//GEN-LAST:event_btn_tecla_pActionPerformed
 
     private void btn_tecla_gActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_gActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "g");
-        searchText("g");
+        searchText();
     }//GEN-LAST:event_btn_tecla_gActionPerformed
 
     private void btn_tecla_hActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_hActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "h");
-        searchText("h");
+        searchText();
     }//GEN-LAST:event_btn_tecla_hActionPerformed
 
     private void btn_tecla_jActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_jActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "j");
-        searchText("j");
+        searchText();
     }//GEN-LAST:event_btn_tecla_jActionPerformed
 
     private void btn_tecla_kActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_kActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "k");
-        searchText("k");
+        searchText();
     }//GEN-LAST:event_btn_tecla_kActionPerformed
 
     private void btn_tecla_lActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_lActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "l");
-        searchText("l");
+        searchText();
     }//GEN-LAST:event_btn_tecla_lActionPerformed
 
     private void btn_tecla_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_aActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "a");
-        searchText("a");
+        searchText();
     }//GEN-LAST:event_btn_tecla_aActionPerformed
 
     private void btn_tecla_sActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_sActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "s");
-        searchText("s");
+        searchText();
     }//GEN-LAST:event_btn_tecla_sActionPerformed
 
     private void btn_tecla_dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_dActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "d");
-        searchText("d");
+        searchText();
     }//GEN-LAST:event_btn_tecla_dActionPerformed
 
     private void btn_tecla_fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_fActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "f");
-        searchText("f");
+        searchText();
     }//GEN-LAST:event_btn_tecla_fActionPerformed
 
     private void btn_tecla_zActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_zActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "z");
-        searchText("z");
+        searchText();
     }//GEN-LAST:event_btn_tecla_zActionPerformed
 
     private void btn_tecla_xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_xActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "x");
-        searchText("x");
+        searchText();
     }//GEN-LAST:event_btn_tecla_xActionPerformed
 
     private void btn_tecla_cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_cActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "c");
-        searchText("c");
+        searchText();
     }//GEN-LAST:event_btn_tecla_cActionPerformed
 
     private void btn_tecla_vActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_vActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "v");
-        searchText("v");
+        searchText();
     }//GEN-LAST:event_btn_tecla_vActionPerformed
 
     private void btn_tecla_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_bActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "b");
-        searchText("b");
+        searchText();
     }//GEN-LAST:event_btn_tecla_bActionPerformed
 
     private void btn_tecla_nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_nActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "n");
-        searchText("n");
+        searchText();
     }//GEN-LAST:event_btn_tecla_nActionPerformed
 
     private void btn_tecla_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_mActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "m");
-        searchText("m");
+        searchText();
     }//GEN-LAST:event_btn_tecla_mActionPerformed
 
     private void btn_tecla_l1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_l1ActionPerformed
@@ -563,7 +569,7 @@ public class Teclado extends javax.swing.JFrame {
         } else {
             txt_display.setText("");
         }
-        searchText("");
+        searchText();
     }//GEN-LAST:event_btn_tecla_l1ActionPerformed
 
     private void btn_tecla_espacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_espacoActionPerformed

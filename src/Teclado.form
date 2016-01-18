@@ -89,7 +89,7 @@
                                       <Component id="btn_tecla_l1" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="btn_tecla_p" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="lbl_smile" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -401,9 +401,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_smile">
-          <Properties>
-            <Property name="text" type="java.lang.String" value=":)"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
