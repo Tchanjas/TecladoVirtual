@@ -1,7 +1,10 @@
+package Structures;
 
+import Dicionario.Dictionary;
+import Dicionario.DictionaryArray;
 import java.io.IOException;
 
-public class Benchmark {
+public class TrieHashVsTrieArray {
     public static void main(String[] args) throws IOException{
         
         System.out.println("\nDicionario Trie Load():");

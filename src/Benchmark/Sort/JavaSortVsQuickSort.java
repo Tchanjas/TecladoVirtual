@@ -1,15 +1,14 @@
-package Sort;
+package Benchmark.Sort;
 
-import static Sort.QuickSort.QuickSort;
+import static Benchmark.Sort.QuickSort.QuickSort;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Benchmark {
+public class JavaSortVsQuickSort {
 
     public static void main(String[] args) {
         int[] x = {24, 2, 45, 20, 56, 75, 2, 56, 99, 53, 12};
         int[] y = x;
-        System.out.println(Arrays.toString(x));
 
         System.out.println("\nQuick Sort:");
         long StartTime = System.nanoTime();

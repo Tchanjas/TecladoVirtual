@@ -1,16 +1,18 @@
+package Structures;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
-public class Trie implements Serializable{
+public class TrieHash implements Serializable{
 
     int frequencia;
-    HashMap<String, Trie> filhos;
+    public HashMap<String, TrieHash> filhos;
     ArrayList<ArrayList<String>> listaPalavras = new ArrayList<ArrayList<String>>(1);
 
-    public Trie() {
+    public TrieHash() {
         filhos = new HashMap<>();
         frequencia = 0;
     }
@@ -24,17 +26,17 @@ public class Trie implements Serializable{
     }
 
     //adiciona um nodo à arvore e incrementa a frequencia porque é o último caractér da palavra
-    void add(String letra, boolean increments) {
+    public void add(String letra, boolean increments) {
         if (!filhos.containsKey(letra)) {
-            filhos.put(letra, new Trie());
+            filhos.put(letra, new TrieHash());
         }
         if (increments) {
             filhos.get(letra).incrementaFrequencia();
         }
     }
 
-    ArrayList find(String palavra) {
-        Trie trie = this;
+    public ArrayList find(String palavra) {
+        TrieHash trie = this;
         listaPalavras.clear();
 
         for (int i = 0; i < palavra.length(); i++) {
@@ -54,7 +56,7 @@ public class Trie implements Serializable{
         }
     }
 
-    private void find(Trie trie, String palavra) {
+    private void find(TrieHash trie, String palavra) {
         if (trie.frequencia > 0) {
             listaPalavras.add(new ArrayList<>());
             listaPalavras.get(listaPalavras.size() - 1).add(trie.frequencia + "");
@@ -81,7 +83,7 @@ public class Trie implements Serializable{
         return frequencia;
     }
 
-    public HashMap<String, Trie> getFilhos() {
+    public HashMap<String, TrieHash> getFilhos() {
         return filhos;
     }
 

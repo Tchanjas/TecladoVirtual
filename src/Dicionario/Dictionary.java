@@ -1,9 +1,12 @@
+package Dicionario;
+
+import Structures.TrieHash;
 import java.io.*;
 import java.util.ArrayList;
 
 public class Dictionary {
     
-    private static Trie dictionary = new Trie();
+    private static TrieHash dictionary = new TrieHash();
 
     public static void load() throws IOException {
         
@@ -36,7 +39,7 @@ public class Dictionary {
                     String[] aux = str.split("[^A-Za-z]+");
 
                     for (int i = 0; i < aux.length; i++) {
-                        Trie trieActual = dictionary;
+                        TrieHash trieActual = dictionary;
                         aux[i] = aux[i].toLowerCase();
                         for (int j = 0; j < aux[i].length(); j++) {
                             if (j + 1 == aux[i].length()) {
@@ -54,7 +57,7 @@ public class Dictionary {
         }
     }
 
-    public static void saveTrie(Trie structure, String path) {
+    public static void saveTrie(TrieHash structure, String path) {
         try {
             FileOutputStream fileoutput = new FileOutputStream(path);
             ObjectOutputStream objectoutput = new ObjectOutputStream(fileoutput);
@@ -65,16 +68,16 @@ public class Dictionary {
         }
     }
 
-    public static Trie loadTrie(String path) {
+    public static TrieHash loadTrie(String path) {
         File estrutura = new File(path);
-        Trie estruturaTrie = new Trie();
+        TrieHash estruturaTrie = new TrieHash();
         if (!estrutura.exists()) {
             return null;
         } else {
             try {
                 FileInputStream fileInput = new FileInputStream(estrutura);
                 ObjectInputStream objectInput = new ObjectInputStream(fileInput);
-                estruturaTrie = (Trie) objectInput.readObject();
+                estruturaTrie = (TrieHash) objectInput.readObject();
             } catch (Exception e) {
                 System.out.println("Erro no carregamento da estrutura");
             }

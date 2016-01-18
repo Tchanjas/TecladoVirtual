@@ -1,3 +1,5 @@
+package Structures;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,7 +9,7 @@ public class TrieArray implements Serializable{
 
     int frequencia;
     String root;
-    TrieArray[] filhos;
+    public TrieArray[] filhos;
     ArrayList<ArrayList<String>> listaPalavras;
 
     public TrieArray(String root) {
@@ -26,7 +28,7 @@ public class TrieArray implements Serializable{
     }
 
     //adiciona um nodo à arvore e incrementa a frequencia porque é o último caractér da palavra
-    void add(String letra, boolean increments) {
+    public void add(String letra, boolean increments) {
         int index = letra.charAt(0) - 'a';
         if (filhos[index] == null) {
             filhos[index] = new TrieArray(letra.charAt(0) + "");
@@ -36,7 +38,7 @@ public class TrieArray implements Serializable{
         }
     }
 
-    ArrayList find(String palavra) {
+    public ArrayList find(String palavra) {
         TrieArray trie = this;
         listaPalavras.clear();
 

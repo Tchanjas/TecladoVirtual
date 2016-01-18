@@ -1,3 +1,6 @@
+package Dicionario;
+
+import Structures.TrieArray;
 import java.io.*;
 import java.util.ArrayList;
 
