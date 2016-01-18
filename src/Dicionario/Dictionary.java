@@ -86,6 +86,21 @@ public class Dictionary {
     }
     
     public static ArrayList find(String palavra) {
+        /*String[] letterCombinations = {"azsq", "bvgn", "cxdv", "decsf", "ewdr",
+            "frvdg", "gfhtb", "hygnj", "iuko", "juhmk", "kijl", "lko", "mnj",
+            "nbhm", "oilp", "pol", "qasw", "reft", "swaxd", "uyji", "tyhu",
+            "vcfb", "wqse", "xzsc", "ythu", "zax"};
+
+        String aux = "";
+        String aux2;
+        for (int i = 0; i < palavra.length(); i++) {
+            int index = palavra.charAt(i) - 'a';
+            for (int j = 0; j < letterCombinations[index].length(); j++) {
+                aux2 = aux + letterCombinations[index].charAt(j) + "";
+                dictionary.find(aux2);
+            }
+            aux += palavra.charAt(i) + "";
+        }*/
         return dictionary.find(palavra);
     }
 }

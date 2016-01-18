@@ -1,9 +1,16 @@
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author asantos3
@@ -13,8 +20,14 @@ public class Teclado extends javax.swing.JFrame {
     /**
      * Creates new form Teclado
      */
-    public Teclado() {
-        initComponents();
+    public Teclado(){
+        try {
+            initComponents();
+            Dicionario.Dictionary.load();
+            displayAddListener();
+        } catch (IOException ex) {
+            Logger.getLogger(Teclado.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -60,8 +73,6 @@ public class Teclado extends javax.swing.JFrame {
         lbl_smile = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        lbl_mostrador.setText("jLabel1");
 
         btn_tecla_q.setText("q");
         btn_tecla_q.addActionListener(new java.awt.event.ActionListener() {
@@ -395,6 +406,32 @@ public class Teclado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void displayAddListener() {
+        txt_display.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent de) {
+                searchText();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent de) {
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent de) {
+            }
+
+            public void searchText() {
+                /*ArrayList words = Dicionario.Dictionary.find(txt_display.getText());
+                ArrayList aux;
+                for (int i = 0; i < 10; i++) {
+                    aux = (ArrayList) words.get(i);
+                    lbl_mostrador.setText(lbl_mostrador.getText()+aux.get(1)+"");
+                }*/
+            }
+        });
+    }
+
     private void btn_tecla_qActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_qActionPerformed
         // TODO add your handling code here:
         txt_display.setText(txt_display.getText() + "q");
@@ -531,7 +568,7 @@ public class Teclado extends javax.swing.JFrame {
             txt_display.setText(txt_display.getText().substring(0, txt_display.getText().length() - 1));
         } else {
             txt_display.setText("");
-        } 
+        }
     }//GEN-LAST:event_btn_tecla_l1ActionPerformed
 
     private void btn_tecla_espacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tecla_espacoActionPerformed

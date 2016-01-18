@@ -175,9 +175,6 @@
         <Component class="javax.swing.JTextField" name="txt_display">
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_mostrador">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btn_tecla_q">
           <Properties>
