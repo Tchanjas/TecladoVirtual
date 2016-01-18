@@ -19,7 +19,6 @@ public class Dictionary {
         }
 
         File estruturaTrie = new File(pathStructure);
-
         if (estruturaTrie.exists()) {
             dictionary = loadTrie(pathStructure);
         } else {
