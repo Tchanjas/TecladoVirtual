@@ -59,6 +59,8 @@ public class Teclado extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txt_display.setEditable(false);
+
         btn_tecla_q.setText("q");
         btn_tecla_q.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -390,14 +392,14 @@ public class Teclado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     public void searchText() {
-        ArrayList words = Dicionario.Dictionary.find(txt_display.getText());
-        ArrayList aux;
+        String ultimaPalavra = txt_display.getText().split(" ")[txt_display.getText().split(" ").length - 1];
+        ArrayList words = Dicionario.Dictionary.find(ultimaPalavra + "");
         lbl_mostrador.setText("");
         if (words.size() > 0) {
             lbl_smile.setText(":)");
             int size = words.size() < 10 ? words.size() : 10;
             for (int i = 0; i < size; i++) {
-                aux = (ArrayList) words.get(i);
+                ArrayList aux = (ArrayList) words.get(i);
                 lbl_mostrador.setText(lbl_mostrador.getText() + aux.get(1) + " ");
             }
         } else {
