@@ -9,7 +9,7 @@ public class TrieHashVsTrieArray {
         
         System.out.println("\nDicionario Trie Load():");
         long StartTime = System.currentTimeMillis();
-        Dictionary.load();
+        Dicionario.Dictionary.load();
         long StopTime = System.currentTimeMillis();
         System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
         
