@@ -1,4 +1,4 @@
-package Benchmark.Sort;
+package Sort;
 
 public class QuickSort {
 

@@ -15,7 +15,7 @@ public class DictionaryArray {
     public static void load() throws IOException {
 
         String pathDictionary = "dictionary/books/oslusiadas.txt";
-        String pathStructure = "dictionary/dictionaryArrayStructure.dat";
+        String pathStructure = "dictionary/dictionaryArray.dat";
 
         File file = new File(pathDictionary);
         if (!file.exists()) {

@@ -1,6 +1,6 @@
-package Benchmark.Sort;
+package Sort;
 
-import static Benchmark.Sort.QuickSort.QuickSort;
+import static Sort.QuickSort.QuickSort;
 import java.util.Arrays;
 import java.util.Comparator;
 
