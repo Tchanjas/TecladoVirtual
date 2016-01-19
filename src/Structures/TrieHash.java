@@ -6,78 +6,75 @@ import java.util.HashMap;
 
 public class TrieHash implements Serializable{
 
-    int frequencia;
-    public HashMap<String, TrieHash> filhos;
-    ArrayList<ArrayList<String>> listaPalavras = new ArrayList<ArrayList<String>>(1);
+    int frequency;
+    public HashMap<String, TrieHash> children;
+    ArrayList<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>(1);
 
     public TrieHash() {
-        filhos = new HashMap<>();
-        frequencia = 0;
+        children = new HashMap<>();
+        frequency = 0;
     }
 
-    void incrementaFrequencia() {
-        frequencia++;
+    void addFrequency() {
+        frequency++;
     }
 
     void add(String letra) {
         add(letra, false);
     }
 
-    //adiciona um nodo à arvore e incrementa a frequencia porque é o último caractér da palavra
-    public void add(String letra, boolean increments) {
-        if (!filhos.containsKey(letra)) {
-            filhos.put(letra, new TrieHash());
+    //adiciona um nodo à arvore e incrementa a frequency porque é o último caractér da palavra
+    public void add(String letter, boolean increments) {
+        if (!children.containsKey(letter)) {
+            children.put(letter, new TrieHash());
         }
         if (increments) {
-            filhos.get(letra).incrementaFrequencia();
+            children.get(letter).addFrequency();
         }
     }
 
-    public ArrayList find(String palavra) {
+    public ArrayList find(String word) {
         TrieHash trie = this;
-        listaPalavras.clear();
-
-        for (int i = 0; i < palavra.length(); i++) {
+        wordList.clear();
+        for (int i = 0; i < word.length(); i++) {
             if (trie != null) {
-                trie = trie.filhos.get(palavra.charAt(i) + "");
+                trie = trie.children.get(word.charAt(i) + "");
             } else {
                 break;
             }
         }
-
         if (trie != null) {
-            find(trie, palavra);
-            return listaPalavras;
+            find(trie, word);
+            return wordList;
         } else {
             return new ArrayList<>();
         }
     }
 
-    private void find(TrieHash trie, String palavra) {
-        if (trie.frequencia > 0) {
-            listaPalavras.add(new ArrayList<>());
-            listaPalavras.get(listaPalavras.size() - 1).add(trie.frequencia + "");
-            listaPalavras.get(listaPalavras.size() - 1).add(palavra);
+    private void find(TrieHash trie, String word) {
+        if (trie.frequency > 0) {
+            wordList.add(new ArrayList<>());
+            wordList.get(wordList.size() - 1).add(trie.frequency + "");
+            wordList.get(wordList.size() - 1).add(word);
         }
-
-        if (!trie.filhos.isEmpty()) {
-            for (String key : trie.filhos.keySet()) {
-                find(trie.filhos.get(key), palavra + key);
+        if (!trie.children.isEmpty()) {
+            for (String key : trie.children.keySet()) {
+                find(trie.children.get(key), word + key);
             }
         }
     }
 
-    public int getFrequencia() {
-        return frequencia;
+    public int getFrequency() {
+        return frequency;
     }
 
-    public HashMap<String, TrieHash> getFilhos() {
-        return filhos;
+    public HashMap<String, TrieHash> getChildren() {
+        return children;
     }
 
     @Override
     public String toString() {
-        return "Trie{" + "frequencia=" + frequencia + ", filhos=" + filhos + '}';
+        return "Trie{" + "frequencia=" + frequency + ", filhos=" + children + '}';
     }
 
 }

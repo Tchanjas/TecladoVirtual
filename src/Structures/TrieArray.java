@@ -5,82 +5,82 @@ import java.util.ArrayList;
 
 public class TrieArray implements Serializable{
 
-    int frequencia;
+    int frequency;
     String root;
-    public TrieArray[] filhos;
-    ArrayList<ArrayList<String>> listaPalavras;
+    public TrieArray[] children;
+    ArrayList<ArrayList<String>> wordList;
 
     public TrieArray(String root) {
-        filhos = new TrieArray[26];
-        frequencia = 0;
+        children = new TrieArray[26];
+        frequency = 0;
         this.root = root;
-        listaPalavras =  new ArrayList<>(1);
+        wordList =  new ArrayList<>(1);
     }
 
-    void incrementaFrequencia() {
-        frequencia++;
+    void addFrequency() {
+        frequency++;
     }
 
-    void add(String letra) {
-        add(letra, false);
+    void add(String letter) {
+        add(letter, false);
     }
 
-    //adiciona um nodo à arvore e incrementa a frequencia porque é o último caractér da palavra
-    public void add(String letra, boolean increments) {
-        int index = letra.charAt(0) - 'a';
-        if (filhos[index] == null) {
-            filhos[index] = new TrieArray(letra.charAt(0) + "");
+    //adiciona um nodo à arvore e incrementa a frequency porque é o último caractér da palavra
+    public void add(String letter, boolean increments) {
+        int index = letter.charAt(0) - 'a';
+        if (children[index] == null) {
+            children[index] = new TrieArray(letter.charAt(0) + "");
         }
         if (increments) {
-            filhos[index].frequencia += 1;
+            children[index].frequency += 1;
         }
     }
 
-    public ArrayList find(String palavra) {
+    public ArrayList find(String word) {
         TrieArray trie = this;
-        listaPalavras.clear();
+        wordList.clear();
 
-        for (int i = 0; i < palavra.length(); i++) {
+        for (int i = 0; i < word.length(); i++) {
             if (trie != null) {
-                trie = trie.filhos[palavra.charAt(i) - 'a'];
+                trie = trie.children[word.charAt(i) - 'a'];
             } else {
                 break;
             }
         }
 
         if (trie != null) {
-            find(trie, palavra);
-            return listaPalavras;
+            find(trie, word);
+            return wordList;
         } else {
             return new ArrayList<>();
         }
     }
 
-    private void find(TrieArray trie, String palavra) {
-        if (trie.frequencia > 0) {
-            listaPalavras.add(new ArrayList<>());
-            listaPalavras.get(listaPalavras.size() - 1).add(trie.frequencia + "");
-            listaPalavras.get(listaPalavras.size() - 1).add(palavra);
+    private void find(TrieArray trie, String word) {
+        if (trie.frequency > 0) {
+            wordList.add(new ArrayList<>());
+            wordList.get(wordList.size() - 1).add(trie.frequency + "");
+            wordList.get(wordList.size() - 1).add(word);
         }
         
-        for (int i = 0; i < trie.filhos.length; i++) {
-            if (trie.filhos[i] != null) {
-                find(trie.filhos[i], palavra + trie.filhos[i].root);
+        for (int i = 0; i < trie.children.length; i++) {
+            if (trie.children[i] != null) {
+                find(trie.children[i], word + trie.children[i].root);
             }
         }
     }
 
-    public int getFrequencia() {
-        return frequencia;
+    public int getFrequency() {
+        return frequency;
     }
 
-    public TrieArray[] getFilhos() {
-        return filhos;
+    public TrieArray[] getChildren() {
+        return children;
     }
 
     @Override
     public String toString() {
-        return "Trie{" + "frequencia=" + frequencia + ", filhos=" + filhos + '}';
+        return "Trie{" + "frequencia=" + frequency + ", filhos=" + children + '}';
     }
 
 }

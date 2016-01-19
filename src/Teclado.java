@@ -26,7 +26,7 @@ public class Teclado extends javax.swing.JFrame {
 
         pnl_main = new javax.swing.JPanel();
         txt_display = new javax.swing.JTextField();
-        lbl_mostrador = new javax.swing.JLabel();
+        lbl_lista = new javax.swing.JLabel();
         btn_tecla_q = new javax.swing.JButton();
         btn_tecla_w = new javax.swing.JButton();
         btn_tecla_e = new javax.swing.JButton();
@@ -58,8 +58,10 @@ public class Teclado extends javax.swing.JFrame {
         lbl_smile = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         txt_display.setEditable(false);
+        txt_display.setFocusable(false);
 
         btn_tecla_q.setText("q");
         btn_tecla_q.addActionListener(new java.awt.event.ActionListener() {
@@ -328,7 +330,7 @@ public class Teclado extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_tecla_espaco, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lbl_mostrador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_lista, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txt_display, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -338,7 +340,7 @@ public class Teclado extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(txt_display, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl_mostrador, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_lista, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_tecla_q)
@@ -394,20 +396,20 @@ public class Teclado extends javax.swing.JFrame {
     public void searchText() {
         ArrayList words = new ArrayList();
         if (!txt_display.getText().isEmpty()) {
-            String ultimaPalavra = txt_display.getText().split(" ")[txt_display.getText().split(" ").length - 1];
-            words = Dicionario.Dictionary.find(ultimaPalavra + "");
+            String lastWord = txt_display.getText().split(" ")[txt_display.getText().split(" ").length - 1];
+            words = Dicionario.Dictionary.find(lastWord + "");
         }
-        lbl_mostrador.setText("");
+        lbl_lista.setText("");
         if (words.size() > 0) {
             lbl_smile.setText(":)");
             int size = words.size() < 10 ? words.size() : 10;
             for (int i = 0; i < size; i++) {
                 ArrayList aux = (ArrayList) words.get(i);
-                lbl_mostrador.setText(lbl_mostrador.getText() + aux.get(1) + " ");
+                lbl_lista.setText(lbl_lista.getText() + aux.get(1) + " ");
             }
         } else {
             lbl_smile.setText(":(");
-            lbl_mostrador.setText("");
+            lbl_lista.setText("");
         }
     }
 
@@ -646,7 +648,7 @@ public class Teclado extends javax.swing.JFrame {
     private javax.swing.JButton btn_tecla_x;
     private javax.swing.JButton btn_tecla_y;
     private javax.swing.JButton btn_tecla_z;
-    private javax.swing.JLabel lbl_mostrador;
+    private javax.swing.JLabel lbl_lista;
     private javax.swing.JLabel lbl_smile;
     private javax.swing.JPanel pnl_main;
     private javax.swing.JTextField txt_display;

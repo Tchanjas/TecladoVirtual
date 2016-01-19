@@ -9,7 +9,7 @@ import java.util.Comparator;
 public class DictionaryArray {
     
     private static TrieArray dictionary = new TrieArray("");
-    static ArrayList<ArrayList<String>> listaPalavras = new ArrayList<ArrayList<String>>(1);
+    static ArrayList<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>(1);
     static ArrayList<String> keyboardCombinations = new ArrayList<>();
 
     public static void load() throws IOException {
@@ -22,9 +22,9 @@ public class DictionaryArray {
             return;
         }
 
-        File estruturaTrie = new File(pathStructure);
+        File trieStructure = new File(pathStructure);
 
-        if (estruturaTrie.exists()) {
+        if (trieStructure.exists()) {
             dictionary = loadTrie(pathStructure);
         } else {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
@@ -43,14 +43,14 @@ public class DictionaryArray {
                     String[] aux = str.split("[^A-Za-z]+");
 
                     for (int i = 0; i < aux.length; i++) {
-                        TrieArray trieActual = dictionary;
+                        TrieArray currentTrie = dictionary;
                         aux[i] = aux[i].toLowerCase();
                         for (int j = 0; j < aux[i].length(); j++) {
                             if (j + 1 == aux[i].length()) {
-                                trieActual.add(aux[i].charAt(j) + "", true);
+                                currentTrie.add(aux[i].charAt(j) + "", true);
                             } else {
-                                trieActual.add(aux[i].charAt(j) + "", false);
-                                trieActual = trieActual.filhos[aux[i].charAt(j) - 'a'];
+                                currentTrie.add(aux[i].charAt(j) + "", false);
+                                currentTrie = currentTrie.children[aux[i].charAt(j) - 'a'];
                             }
 
                         }
@@ -73,23 +73,23 @@ public class DictionaryArray {
     }
 
     public static TrieArray loadTrie(String path) {
-        File estrutura = new File(path);
-        TrieArray estruturaTrie = new TrieArray("");
-        if (!estrutura.exists()) {
+        File structure =  new File(path);
+        TrieArray trieStructure = new TrieArray("");
+        if (!structure.exists()) {
             return null;
         } else {
             try {
-                FileInputStream fileInput = new FileInputStream(estrutura);
+                FileInputStream fileInput = new FileInputStream(structure);
                 ObjectInputStream objectInput = new ObjectInputStream(fileInput);
-                estruturaTrie = (TrieArray) objectInput.readObject();
+                trieStructure = (TrieArray) objectInput.readObject();
             } catch (Exception e) {
                 System.out.println("Erro no carregamento da estrutura");
             }
-            return estruturaTrie;
+            return trieStructure;
         }
     }
     
-    static ArrayList<String> keyboardCombinations(String palavra) {
+    static ArrayList<String> keyboardCombinations(String word) {
 
         String[] letterCombinations = {"azsq", "bvgn", "cxdv", "decsf", "ewdr",
             "frvdg", "gfhtb", "hygnj", "iuko", "juhmk", "kijl", "lko", "mnj",
@@ -97,29 +97,29 @@ public class DictionaryArray {
             "vcfb", "wqse", "xzsc", "ythu", "zax"};
 
         if (keyboardCombinations.isEmpty()) {
-            for (int i = 0; i < letterCombinations[palavra.charAt(0) - 'a'].length(); i++) {
-                keyboardCombinations.add(letterCombinations[palavra.charAt(0) - 'a'].charAt(i) + "");
+            for (int i = 0; i < letterCombinations[word.charAt(0) - 'a'].length(); i++) {
+                keyboardCombinations.add(letterCombinations[word.charAt(0) - 'a'].charAt(i) + "");
             }
-            if (!palavra.substring(1).isEmpty()) {
-                keyboardCombinations(palavra.substring(1));
+            if (!word.substring(1).isEmpty()) {
+                keyboardCombinations(word.substring(1));
             }
         } else {
             int size = keyboardCombinations.size();
             for (int i = 0; i < size; i++) {
-                for (int j = 0; j < letterCombinations[palavra.charAt(0) - 'a'].length(); j++) {
-                    keyboardCombinations.add(keyboardCombinations.get(0) + "" + letterCombinations[palavra.charAt(0) - 'a'].charAt(j));
+                for (int j = 0; j < letterCombinations[word.charAt(0) - 'a'].length(); j++) {
+                    keyboardCombinations.add(keyboardCombinations.get(0) + "" + letterCombinations[word.charAt(0) - 'a'].charAt(j));
                 }
                 keyboardCombinations.remove(0);
             }
-            if (!palavra.substring(1).isEmpty()) {
-                keyboardCombinations(palavra.substring(1));
+            if (!word.substring(1).isEmpty()) {
+                keyboardCombinations(word.substring(1));
             }
         }
         return keyboardCombinations;
     }
 
-    static void listaSort() {
-        Collections.sort(listaPalavras, new Comparator<ArrayList<String>>() {
+    static void listSort() {
+        Collections.sort(wordList, new Comparator<ArrayList<String>>() {
             @Override
             public int compare(ArrayList<String> i, ArrayList<String> j) {
                 // estava-se a usar Integers aqui mas tem de se 
@@ -131,14 +131,14 @@ public class DictionaryArray {
         });
     }
 
-    public static ArrayList find(String palavra) {
+    public static ArrayList find(String word) {
         keyboardCombinations.clear();
-        listaPalavras.clear();
-        keyboardCombinations(palavra);
+        wordList.clear();
+        keyboardCombinations(word);
         for (int i = 0; i < keyboardCombinations.size(); i++) {
-            listaPalavras.addAll(dictionary.find(keyboardCombinations.get(i)));
+            wordList.addAll(dictionary.find(keyboardCombinations.get(i)));
         }
-        listaSort();
-        return listaPalavras;
+        listSort();
+        return wordList;
     }
 }
