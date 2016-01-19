@@ -392,8 +392,11 @@ public class Teclado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     public void searchText() {
-        String ultimaPalavra = txt_display.getText().split(" ")[txt_display.getText().split(" ").length - 1];
-        ArrayList words = Dicionario.Dictionary.find(ultimaPalavra + "");
+        ArrayList words = new ArrayList();
+        if (!txt_display.getText().isEmpty()) {
+            String ultimaPalavra = txt_display.getText().split(" ")[txt_display.getText().split(" ").length - 1];
+            words = Dicionario.Dictionary.find(ultimaPalavra + "");
+        }
         lbl_mostrador.setText("");
         if (words.size() > 0) {
             lbl_smile.setText(":)");
