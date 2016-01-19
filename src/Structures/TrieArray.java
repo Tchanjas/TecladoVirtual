@@ -2,8 +2,6 @@ package Structures;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class TrieArray implements Serializable{
 
@@ -52,7 +50,6 @@ public class TrieArray implements Serializable{
 
         if (trie != null) {
             find(trie, palavra);
-            listaSort();
             return listaPalavras;
         } else {
             return new ArrayList<>();
@@ -71,15 +68,6 @@ public class TrieArray implements Serializable{
                 find(trie.filhos[i], palavra + trie.filhos[i].root);
             }
         }
-    }
-
-    void listaSort() {
-        Collections.sort(listaPalavras, new Comparator<ArrayList<String>>() {
-            @Override
-            public int compare(ArrayList<String> i, ArrayList<String> j) {
-                return j.get(0).compareTo(i.get(0));
-            }
-        });
     }
 
     public int getFrequencia() {

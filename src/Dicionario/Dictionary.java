@@ -3,10 +3,14 @@ package Dicionario;
 import Structures.TrieHash;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Dictionary {
     
     private static TrieHash dictionary = new TrieHash();
+    static ArrayList<ArrayList<String>> listaPalavras = new ArrayList<ArrayList<String>>(1);
+    static ArrayList<String> keyboardCombinations = new ArrayList<>();
 
     public static void load() throws IOException {
         
@@ -83,23 +87,57 @@ public class Dictionary {
             return estruturaTrie;
         }
     }
-    
-    public static ArrayList find(String palavra) {
-        /*String[] letterCombinations = {"azsq", "bvgn", "cxdv", "decsf", "ewdr",
+
+    static ArrayList<String> keyboardCombinations(String palavra) {
+
+        String[] letterCombinations = {"azsq", "bvgn", "cxdv", "decsf", "ewdr",
             "frvdg", "gfhtb", "hygnj", "iuko", "juhmk", "kijl", "lko", "mnj",
             "nbhm", "oilp", "pol", "qasw", "reft", "swaxd", "uyji", "tyhu",
             "vcfb", "wqse", "xzsc", "ythu", "zax"};
 
-        String aux = "";
-        String aux2;
-        for (int i = 0; i < palavra.length(); i++) {
-            int index = palavra.charAt(i) - 'a';
-            for (int j = 0; j < letterCombinations[index].length(); j++) {
-                aux2 = aux + letterCombinations[index].charAt(j) + "";
-                dictionary.find(aux2);
+        if (keyboardCombinations.isEmpty()) {
+            for (int i = 0; i < letterCombinations[palavra.charAt(0) - 'a'].length(); i++) {
+                keyboardCombinations.add(letterCombinations[palavra.charAt(0) - 'a'].charAt(i) + "");
             }
-            aux += palavra.charAt(i) + "";
-        }*/
-        return dictionary.find(palavra);
+            if (!palavra.substring(1).isEmpty()) {
+                keyboardCombinations(palavra.substring(1));
+            }
+        } else {
+            int size = keyboardCombinations.size();
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < letterCombinations[palavra.charAt(0) - 'a'].length(); j++) {
+                    keyboardCombinations.add(keyboardCombinations.get(0) + "" + letterCombinations[palavra.charAt(0) - 'a'].charAt(j));
+                }
+                keyboardCombinations.remove(0);
+            }
+            if (!palavra.substring(1).isEmpty()) {
+                keyboardCombinations(palavra.substring(1));
+            }
+        }
+        return keyboardCombinations;
+    }
+    
+    static void listaSort() {
+        Collections.sort(listaPalavras, new Comparator<ArrayList<String>>() {
+            @Override
+            public int compare(ArrayList<String> i, ArrayList<String> j) {
+                // estava-se a usar Integers aqui mas tem de se 
+                // usar doubles invés devido à imprecisão (?)
+                // http://stackoverflow.com/questions/28346750/comparator-of-arraylistobject-doesnt-work-properly
+                return new Double(j.get(0)).compareTo(new Double(i.get(0))
+                );
+            }
+        });
+    }
+    
+    public static ArrayList find(String palavra) {
+        keyboardCombinations.clear();
+        listaPalavras.clear();
+        keyboardCombinations(palavra);
+        for (int i = 0; i < keyboardCombinations.size(); i++) {
+            listaPalavras.addAll(dictionary.find(keyboardCombinations.get(i)));
+        }
+        listaSort();
+        return listaPalavras;
     }
 }
