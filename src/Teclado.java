@@ -1,3 +1,4 @@
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -6,7 +7,7 @@ public class Teclado extends javax.swing.JFrame {
     /**
      * Creates new form Teclado
      */
-    public Teclado(){
+    public Teclado() {
         try {
             initComponents();
             Dicionario.Dictionary.load();
@@ -392,7 +393,7 @@ public class Teclado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     public void searchText() {
         ArrayList words = new ArrayList();
         if (!txt_display.getText().isEmpty()) {

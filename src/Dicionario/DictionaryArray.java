@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class DictionaryArray {
-    
+
     private static TrieArray dictionary = new TrieArray("");
     static ArrayList<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>(1);
     static ArrayList<String> keyboardCombinations = new ArrayList<>();
@@ -73,7 +73,7 @@ public class DictionaryArray {
     }
 
     public static TrieArray loadTrie(String path) {
-        File structure =  new File(path);
+        File structure = new File(path);
         TrieArray trieStructure = new TrieArray("");
         if (!structure.exists()) {
             return null;
@@ -88,7 +88,7 @@ public class DictionaryArray {
             return trieStructure;
         }
     }
-    
+
     static ArrayList<String> keyboardCombinations(String word) {
 
         String[] letterCombinations = {"azsq", "bvgn", "cxdv", "decsf", "ewdr",

@@ -3,7 +3,7 @@ package Structures;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TrieArray implements Serializable{
+public class TrieArray implements Serializable {
 
     int frequency;
     String root;
@@ -14,7 +14,7 @@ public class TrieArray implements Serializable{
         children = new TrieArray[26];
         frequency = 0;
         this.root = root;
-        wordList =  new ArrayList<>(1);
+        wordList = new ArrayList<>(1);
     }
 
     void addFrequency() {
@@ -62,7 +62,7 @@ public class TrieArray implements Serializable{
             wordList.get(wordList.size() - 1).add(trie.frequency + "");
             wordList.get(wordList.size() - 1).add(word);
         }
-        
+
         for (int i = 0; i < trie.children.length; i++) {
             if (trie.children[i] != null) {
                 find(trie.children[i], word + trie.children[i].root);

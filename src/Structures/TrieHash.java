@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TrieHash implements Serializable{
+public class TrieHash implements Serializable {
 
     int frequency;
     public HashMap<String, TrieHash> children;
