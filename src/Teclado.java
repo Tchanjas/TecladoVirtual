@@ -262,6 +262,7 @@ public class Teclado extends javax.swing.JFrame {
             }
         });
 
+        checkbox_comb.setSelected(true);
         checkbox_comb.setText("Usar combinações?");
         checkbox_comb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -387,7 +388,7 @@ public class Teclado extends javax.swing.JFrame {
                     .addComponent(btn_tecla_n)
                     .addComponent(btn_tecla_m)
                     .addComponent(btn_tecla_espaco))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(checkbox_comb)
                 .addContainerGap())
         );

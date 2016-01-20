@@ -24,13 +24,13 @@ public class TrieHashVsTrieArray {
 
         System.out.println("Trie find():");
         StartTime = System.currentTimeMillis();
-        System.out.println(Dictionary.find("a", false));
+        System.out.println(Dictionary.find("a", true));
         StopTime = System.currentTimeMillis();
         System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
 
         System.out.println("TrieArray find():");
         StartTime = System.currentTimeMillis();
-        System.out.println(DictionaryArray.find("o"));
+        System.out.println(DictionaryArray.find("o", true));
         StopTime = System.currentTimeMillis();
         System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
     }

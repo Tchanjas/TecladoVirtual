@@ -8,11 +8,12 @@ public class TrieHash implements Serializable {
 
     int frequency;
     public HashMap<String, TrieHash> children;
-    ArrayList<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>(1);
+    ArrayList<ArrayList<String>> wordList;
 
     public TrieHash() {
         children = new HashMap<>();
         frequency = 0;
+        wordList = new ArrayList<>(1);
     }
 
     void addFrequency() {

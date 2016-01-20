@@ -168,7 +168,7 @@
                       <Component id="btn_tecla_m" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_tecla_espaco" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="6" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="checkbox_comb" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -412,6 +412,7 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="checkbox_comb">
           <Properties>
+            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Usar combina&#xe7;&#xf5;es?"/>
           </Properties>
           <Events>

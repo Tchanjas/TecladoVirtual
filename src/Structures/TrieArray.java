@@ -85,9 +85,9 @@ public class TrieArray implements Serializable {
             wordList.add(temp_arrayList);
         }
         // if there's children on the trie then do a recursive find
-        for (int i = 0; i < trie.children.length; i++) {
-            if (trie.children[i] != null) {
-                find(trie.children[i], word + trie.children[i].root);
+        for (TrieArray children1 : trie.children) {
+            if (children1 != null) {
+                find(children1, word + children1.root);
             }
         }
     }
