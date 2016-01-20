@@ -53,9 +53,10 @@ public class TrieHash implements Serializable {
 
     private void find(TrieHash trie, String word) {
         if (trie.frequency > 0) {
-            wordList.add(new ArrayList<>());
-            wordList.get(wordList.size() - 1).add(trie.frequency + "");
-            wordList.get(wordList.size() - 1).add(word);
+            ArrayList temp_arrayList = new ArrayList<>();
+            temp_arrayList.add(trie.frequency + "");
+            temp_arrayList.add(word);
+            wordList.add(temp_arrayList);
         }
         if (!trie.children.isEmpty()) {
             for (String key : trie.children.keySet()) {
