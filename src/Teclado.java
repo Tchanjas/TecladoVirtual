@@ -57,6 +57,7 @@ public class Teclado extends javax.swing.JFrame {
         btn_tecla_espaco = new javax.swing.JButton();
         btn_tecla_l1 = new javax.swing.JButton();
         lbl_smile = new javax.swing.JLabel();
+        checkbox_comb = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -260,6 +261,13 @@ public class Teclado extends javax.swing.JFrame {
             }
         });
 
+        checkbox_comb.setText("Usar combinações?");
+        checkbox_comb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkbox_combActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
         pnl_main.setLayout(pnl_mainLayout);
         pnl_mainLayout.setHorizontalGroup(
@@ -267,8 +275,11 @@ public class Teclado extends javax.swing.JFrame {
             .addGroup(pnl_mainLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_lista, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_display, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(checkbox_comb)
                             .addGroup(pnl_mainLayout.createSequentialGroup()
                                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnl_mainLayout.createSequentialGroup()
@@ -330,9 +341,7 @@ public class Teclado extends javax.swing.JFrame {
                                 .addComponent(btn_tecla_m)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_tecla_espaco, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lbl_lista, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_display, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnl_mainLayout.setVerticalGroup(
@@ -377,7 +386,9 @@ public class Teclado extends javax.swing.JFrame {
                     .addComponent(btn_tecla_n)
                     .addComponent(btn_tecla_m)
                     .addComponent(btn_tecla_espaco))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                .addComponent(checkbox_comb)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -398,7 +409,11 @@ public class Teclado extends javax.swing.JFrame {
         ArrayList words = new ArrayList();
         if (!txt_display.getText().isEmpty()) {
             String lastWord = txt_display.getText().split(" ")[txt_display.getText().split(" ").length - 1];
-            words = Dicionario.Dictionary.find(lastWord + "");
+            if (checkbox_comb.isSelected()) {
+                words = Dicionario.Dictionary.find(lastWord + "", true);
+            } else {
+                words = Dicionario.Dictionary.find(lastWord + "", false);
+            }
         }
         lbl_lista.setText("");
         if (words.size() > 0) {
@@ -585,6 +600,10 @@ public class Teclado extends javax.swing.JFrame {
         txt_display.setText(txt_display.getText() + " ");
     }//GEN-LAST:event_btn_tecla_espacoActionPerformed
 
+    private void checkbox_combActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_combActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkbox_combActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -649,6 +668,7 @@ public class Teclado extends javax.swing.JFrame {
     private javax.swing.JButton btn_tecla_x;
     private javax.swing.JButton btn_tecla_y;
     private javax.swing.JButton btn_tecla_z;
+    private javax.swing.JCheckBox checkbox_comb;
     private javax.swing.JLabel lbl_lista;
     private javax.swing.JLabel lbl_smile;
     private javax.swing.JPanel pnl_main;

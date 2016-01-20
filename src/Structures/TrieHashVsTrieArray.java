@@ -24,7 +24,7 @@ public class TrieHashVsTrieArray {
 
         System.out.println("Trie find():");
         StartTime = System.currentTimeMillis();
-        System.out.println(Dictionary.find("o"));
+        System.out.println(Dictionary.find("a", false));
         StopTime = System.currentTimeMillis();
         System.out.println("Tempo: " + (StopTime - StartTime) + " ms");
 

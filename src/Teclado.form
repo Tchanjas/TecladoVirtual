@@ -39,11 +39,14 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lbl_lista" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txt_display" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="checkbox_comb" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -115,8 +118,6 @@
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="lbl_lista" alignment="1" max="32767" attributes="0"/>
-                      <Component id="txt_display" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -167,7 +168,9 @@
                       <Component id="btn_tecla_m" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_tecla_espaco" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="6" max="32767" attributes="0"/>
+                  <Component id="checkbox_comb" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -406,6 +409,14 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_smile">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="checkbox_comb">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Usar combina&#xe7;&#xf5;es?"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkbox_combActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

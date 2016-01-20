@@ -130,12 +130,16 @@ public class Dictionary {
         });
     }
 
-    public static ArrayList find(String word) {
+    public static ArrayList find(String word, boolean comb) {
         keyboardCombinations.clear();
         wordList.clear();
-        keyboardCombinations(word);
-        for (int i = 0; i < keyboardCombinations.size(); i++) {
-            wordList.addAll(dictionary.find(keyboardCombinations.get(i)));
+        if (comb) {
+            keyboardCombinations(word);
+            for (int i = 0; i < keyboardCombinations.size(); i++) {
+                wordList.addAll(dictionary.find(keyboardCombinations.get(i)));
+            }
+        } else {
+            wordList.addAll(dictionary.find(word));
         }
         listSort();
         return wordList;
