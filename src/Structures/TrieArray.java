@@ -21,11 +21,21 @@ public class TrieArray implements Serializable {
         frequency++;
     }
 
+    /**
+     * Add a new letter to the children of the trie
+     *
+     * @param letter a string to add to the children
+     */
     void add(String letter) {
         add(letter, false);
     }
 
-    //adiciona um nodo à arvore e incrementa a frequency porque é o último caractér da palavra
+    /**
+     * Add a new letter to the children of the trie
+     *
+     * @param letter a string to add to the children
+     * @param increments if true also increments the frequency of the letter
+     */
     public void add(String letter, boolean increments) {
         int index = letter.charAt(0) - 'a';
         if (children[index] == null) {
@@ -36,6 +46,11 @@ public class TrieArray implements Serializable {
         }
     }
 
+    /**
+     *  Find a word and any word that begins with that word
+     * @param word word to find
+     * @return an ArrayList with the words found and their respective frequency
+     */
     public ArrayList find(String word) {
         TrieArray trie = this;
         wordList.clear();
@@ -56,14 +71,20 @@ public class TrieArray implements Serializable {
         }
     }
 
+    /**
+     * Find every children of a passed trie
+     * @param trie the current trie to travel by its children
+     * @param word the current word to add on the wordList if its frequency is > 0
+     */
     private void find(TrieArray trie, String word) {
+        // add the current node if the frequency if > 0
         if (trie.frequency > 0) {
             ArrayList temp_arrayList = new ArrayList<>();
             temp_arrayList.add(trie.frequency + "");
             temp_arrayList.add(word);
             wordList.add(temp_arrayList);
         }
-
+        // if there's children on the trie then do a recursive find
         for (int i = 0; i < trie.children.length; i++) {
             if (trie.children[i] != null) {
                 find(trie.children[i], word + trie.children[i].root);
